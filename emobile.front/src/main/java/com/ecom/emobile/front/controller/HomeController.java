@@ -16,12 +16,8 @@ public class HomeController {
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public ModelAndView index() {
 		ModelAndView mv=new ModelAndView("index");
-		User s=new User();
-		s.setName("suganya");
 		
-		s.setAddress("Madurai");
-		
-		userDao.save(s);
 		return mv;
 	}
-}
+	
+   }

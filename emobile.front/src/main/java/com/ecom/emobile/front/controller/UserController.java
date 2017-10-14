@@ -14,25 +14,18 @@ import com.ecom.emobile.backend.Model.User;
 public class UserController {
 @Autowired
 private UserDao userDao;
-@RequestMapping(value="/register" , method=RequestMethod.GET)
+@RequestMapping(value="/signup" , method=RequestMethod.GET)
 public ModelAndView register() {
-	ModelAndView mv=new ModelAndView ("register","command",new User());
+	ModelAndView mv=new ModelAndView ("signup","command",new User());
 	return mv;
 }
 
-@RequestMapping(value="/register", method=RequestMethod.POST)
-public ModelAndView register(@ModelAttribute("user") User user) {
-   ModelAndView mv=new ModelAndView ("Login");
-   userDao.save(user);
-   return mv;
-	
-}
-@RequestMapping(value="/login" , method=RequestMethod.GET)
-public ModelAndView login() {
-  ModelAndView mv=new ModelAndView("login","command",new User());
-  
-  return mv;
-}
 
+@RequestMapping(value="/signup", method=RequestMethod.POST)
+public ModelAndView login(@ModelAttribute("user") User user){
+	ModelAndView mv=new ModelAndView("login");
+	userDao.save(user);
+	return mv;
+}
 
 }

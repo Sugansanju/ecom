@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2>Thanks to Register</h2>
+<h1>Please enter correct email or password</h1>
 </body>
 </html>

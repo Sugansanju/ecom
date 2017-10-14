@@ -19,8 +19,6 @@ public class User {
 	private String email;
 	@Column(name="User_pw")
 	private String password;
-	@Column(name="User_cpw")
-	private String cfrmPassword;
 	@Column(name="User_cont")
 	private String contact;
 	@Column(name="User_address")
@@ -50,12 +48,7 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getCfrmPassword() {
-		return cfrmPassword;
-	}
-	public void setCfrmPassword(String cfrmPassword) {
-		cfrmPassword = cfrmPassword;
-	}
+	
 	public String getContact() {
 		return contact;
 	}

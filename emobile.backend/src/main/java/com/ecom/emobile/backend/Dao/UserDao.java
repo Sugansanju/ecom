@@ -9,7 +9,8 @@ public interface UserDao {
 	public void save(User entity);//Student is the Model Class Name Not a Table Name
 	public void delete(int id);
 	public void update(User entity);
-	public User findById(int id);
+	public User findById(String email);
+	public boolean validate(String email,String password);
 	public Set<User> findAll();
 
 }

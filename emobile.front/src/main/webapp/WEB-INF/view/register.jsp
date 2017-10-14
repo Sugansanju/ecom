@@ -11,12 +11,11 @@
 <reg:form action="register"  method="POST">
 User Name:<reg:input type="text" path="name" /><br>
 Email Address:<reg:input type="mail" path="email" /><br>
-Password:<reg:input type="pw" path="password" /><br>
-Confirm Password:<reg:input type="cfmpw" path="cfrmPassword" /><br>
+Password:<reg:password path="password"/><br>
 Contact:<reg:input type="cont" path="contact" /><br>
 Address:<reg:input type="address" path="address" /><br>
 <input type="submit" name="butSubmit" value="Register" />
 </reg:form>
 
 </body>
-</html>	`1
+</html>	
