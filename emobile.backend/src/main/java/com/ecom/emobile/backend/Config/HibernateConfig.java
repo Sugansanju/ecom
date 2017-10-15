@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 
+import com.ecom.emobile.backend.Model.Product;
 import com.ecom.emobile.backend.Model.User;
 
 @Configuration
@@ -43,6 +44,7 @@ public class HibernateConfig {
 		LocalSessionFactoryBuilder builder = new LocalSessionFactoryBuilder(dataSource);
 		builder.addProperties(getHibernateProperties());
 		builder.addAnnotatedClass(User.class);
-        return builder.buildSessionFactory();
+		builder.addAnnotatedClass(Product.class);
+		return builder.buildSessionFactory();
 	}
 }

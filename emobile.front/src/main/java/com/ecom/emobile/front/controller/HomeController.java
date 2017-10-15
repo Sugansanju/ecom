@@ -11,13 +11,13 @@ import com.ecom.emobile.backend.Model.User;
 
 @Controller
 public class HomeController {
-	@Autowired
-	private UserDao userDao;
-	@RequestMapping(value="/", method=RequestMethod.GET)
-	public ModelAndView index() {
-		ModelAndView mv=new ModelAndView("index");
+		@Autowired
+		private UserDao userDao;
+		@RequestMapping(value="/", method=RequestMethod.GET)
+		public ModelAndView index() {
+			ModelAndView mv=new ModelAndView("index");
+			
+			return mv;
+		}
 		
-		return mv;
-	}
-	
-   }
+	   }
