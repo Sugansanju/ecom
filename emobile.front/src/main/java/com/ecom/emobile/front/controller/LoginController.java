@@ -32,7 +32,8 @@ public ModelAndView validate(HttpServletRequest request, HttpServletResponse res
 	if(email.equals(user.getEmail()) && password.equals(user.getPassword())){
 		mv=new ModelAndView("index");
 		mv.getModelMap().addAttribute("user", user);
-	}else{
+	}
+	else{
 		mv=new ModelAndView("failure");		
 		mv.getModelMap().addAttribute("user", user);
 	}			

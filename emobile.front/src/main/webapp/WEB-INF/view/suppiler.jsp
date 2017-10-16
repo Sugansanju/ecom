@@ -7,28 +7,32 @@
     <div class="navbar-header">
       <a class="navbar-brand" href="#"></a>
     </div>
-    <div class="collapse navbar-collapse" >
     <ul class="nav navbar-nav">
       <li class="active"><a href="#"></a></li>
       <li><a href="#"></a></li>
       <li><a href="#"></a></li>
     </ul>
-    
+    <ul class="nav navbar-nav navbar-Left">
+    <li><a href=""><i class="fa fa-product-hunt"></i>Add</a></li>
+    <li><a href=""><i class="glyphicon glyphicon-shopping-cart">Update</i></a></li>
+      <li><a href=""><span class="glyphicon glyphicon-user"></span>Delete</a></li>
+     <!--  <li><a href=""><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
+    </ul>
+    <!-- 
     <ul class="nav navbar-nav navbar-right">
     <li><a href="products"><i class="fa fa-product-hunt"></i>Products</a></li>
     <li><a href=""><i class="glyphicon glyphicon-shopping-cart">Cart</i></a></li>
       <li><a href="register"><span class="glyphicon glyphicon-user"></span>Register</a></li>
       <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </ul>
-  </div>
+    </ul> -->
   </div>
 </nav>
 <div id="site">
 	<header id="masthead">
-		<center ><h1> <p class="text-primary">PEGASUS GAMES SITE <span class="tagline"></span> </p></h1></center>
+		<center ><h1> <p class="text-primary">Add Details <span class="tagline"></span> </p></h1></center>
 	</header>
 	
-	<div id="content">
+	<!-- <div id="content">
 		<div id="products">
 			<ul>
 				<li>
@@ -139,10 +143,7 @@
 			</ul>
 		</div>
 	</div>
-	
-	
-	
-	
+	 -->
 
 </div>
 

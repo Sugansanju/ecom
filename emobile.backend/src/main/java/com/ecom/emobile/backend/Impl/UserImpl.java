@@ -47,11 +47,12 @@ private SessionFactory sessionFactory;
 	}
 
 	public User findById(String email) {
-		
+			
 			Session session=sessionFactory.openSession();
 			String hql = "FROM User u WHERE u.email = '" + email +"'" ;
 			Query query = session.createQuery(hql);
-			List results = query.list();
+			List results=null;
+			results = query.list();
 			if(results!=null)
 				return (User) results.get(0);
 			else
@@ -71,10 +72,5 @@ private SessionFactory sessionFactory;
 			return false;		
 		
 	}
-
-
-
 	
-	
-
 }

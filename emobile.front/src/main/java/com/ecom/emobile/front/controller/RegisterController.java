@@ -11,17 +11,17 @@ import com.ecom.emobile.backend.Dao.UserDao;
 import com.ecom.emobile.backend.Model.User;
 
 @Controller
-public class UserController {
+public class RegisterController {
 @Autowired
 private UserDao userDao;
-@RequestMapping(value="/signup" , method=RequestMethod.GET)
+@RequestMapping(value="/register" , method=RequestMethod.GET)
 public ModelAndView register() {
-	ModelAndView mv=new ModelAndView ("signup","command",new User());
+	ModelAndView mv=new ModelAndView ("register","command",new User());
 	return mv;
 }
 
 
-@RequestMapping(value="/signup", method=RequestMethod.POST)
+@RequestMapping(value="/register", method=RequestMethod.POST)
 public ModelAndView login(@ModelAttribute("user") User user){
 	ModelAndView mv=new ModelAndView("login");
 	userDao.save(user);

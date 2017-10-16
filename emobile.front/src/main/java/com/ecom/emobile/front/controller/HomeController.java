@@ -20,4 +20,9 @@ public class HomeController {
 			return mv;
 		}
 		
-	   }
+		@RequestMapping(value="/products" , method=RequestMethod.GET)
+		public ModelAndView products() {
+			ModelAndView mv=new ModelAndView ();
+			return mv;
+		}
+}

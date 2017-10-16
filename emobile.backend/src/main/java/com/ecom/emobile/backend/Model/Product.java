@@ -1,7 +1,7 @@
 package com.ecom.emobile.backend.Model;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
+//import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -9,17 +9,24 @@ import javax.persistence.Table;
 @Table(name="Product")
 public class Product {
 	@Id
-	@GeneratedValue
-	private int id;
+	private String pid;
+	private String pimage;
 	private String pname;
 	private String pdescrip;
 	private String pquantiy;
 	private String pprice;
-	public int getId() {
-		return id;
+
+	public String getPid() {
+		return pid;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setPid(String pid) {
+		this.pid = pid;
+	}
+	public String getPimage() {
+		return pimage;
+	}
+	public void setPimage(String pimage) {
+		this.pimage = pimage;
 	}
 	public String getPname() {
 		return pname;

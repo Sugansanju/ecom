@@ -1,21 +1,141 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@ taglib uri="http://www.springframework.org/tags/form" prefix="reg"%>   
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
+<%@include file="header.jsp"%>
+
 <body>
-<reg:form action="register"  method="POST">
-User Name:<reg:input type="text" path="name" /><br>
-Email Address:<reg:input type="mail" path="email" /><br>
-Password:<reg:password path="password"/><br>
-Contact:<reg:input type="cont" path="contact" /><br>
-Address:<reg:input type="address" path="address" /><br>
-<input type="submit" name="butSubmit" value="Register" />
-</reg:form>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+      <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+<div id="site">
+	<header id="masthead">
+		<center><h1><p class="text-primary">PEGASUS GAMES SITE <span class="tagline"></p></h1></center>
+	</header>  
+   <div class="container">
+
+    <form class="well form-horizontal" action="register " method="POST"  id="contact_form">
+<fieldset>
+
+<!-- Form Name -->
+<legend><center><h2><b>Registration Form</b></h2></center></legend><br>
+
+
+  
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Username</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="name" placeholder="Username" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Password</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="password" placeholder="Password" class="form-control"  type="password">
+    </div>
+  </div>
+</div>
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Confirm Password</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="cpassword" placeholder="Confirm Password" class="form-control"  type="password">
+    </div>
+  </div>
+</div>
+<!-- Text input-->
+       <div class="form-group">
+  <label class="col-md-4 control-label">E-Mail</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Contact</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="contact" placeholder="Contact" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Address</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="address" placeholder="Address" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Address</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+
+ </div>
+  </div>
+</div>
+
+
+       
+
+
+<!-- Select Basic -->
+
+<!-- Success message -->
+<!--<div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Success!.</div>-->
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4"><br>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<!-- <a href="login" role="button" class="btn btn-warning" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSubmit<span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a> -->
+ <input type="submit" class="btn btn-warning"  name="butSubmit" value="Register">
+  </div>
+</div>
+
+
+</fieldset>
+</form>
+</div>
+    </div><!-- /.container -->
+	</div>
+
 
 </body>
 </html>	
