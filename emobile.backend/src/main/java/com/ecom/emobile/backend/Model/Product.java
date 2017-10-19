@@ -10,10 +10,11 @@ import javax.persistence.Table;
 public class Product {
 	@Id
 	private String pid;
+	private String sid;
 	private String pimage;
 	private String pname;
 	private String pdescrip;
-	private String pquantiy;
+	private String pquantity;
 	private String pprice;
 
 	public String getPid() {
@@ -21,6 +22,12 @@ public class Product {
 	}
 	public void setPid(String pid) {
 		this.pid = pid;
+	}
+	public String getSid() {
+		return sid;
+	}
+	public void setSid(String sid) {
+		this.sid = sid;
 	}
 	public String getPimage() {
 		return pimage;
@@ -40,11 +47,11 @@ public class Product {
 	public void setPdescrip(String pdescrip) {
 		this.pdescrip = pdescrip;
 	}
-	public String getPquantiy() {
-		return pquantiy;
+	public String getPquantity() {
+		return pquantity;
 	}
-	public void setPquantiy(String pquantiy) {
-		this.pquantiy = pquantiy;
+	public void setPquantity(String pquantity) {
+		this.pquantity = pquantity;
 	}
 	public String getPprice() {
 		return pprice;

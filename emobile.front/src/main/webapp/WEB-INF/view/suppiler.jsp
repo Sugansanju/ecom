@@ -13,7 +13,7 @@
       <li><a href="#"></a></li>
     </ul>
     <ul class="nav navbar-nav navbar-Left">
-    <li><a href=""><i class="fa fa-product-hunt"></i>Add</a></li>
+    <li><a href="add"><i class="fa fa-product-hunt"></i>Add</a></li>
     <li><a href=""><i class="glyphicon glyphicon-shopping-cart">Update</i></a></li>
       <li><a href=""><span class="glyphicon glyphicon-user"></span>Delete</a></li>
      <!--  <li><a href=""><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
