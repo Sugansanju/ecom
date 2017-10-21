@@ -1,7 +1,9 @@
 package com.ecom.emobile.backend.Impl;
 
+import java.util.List;
 import java.util.Set;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,16 +25,21 @@ session.close();
 public void update(Product entity) {
 	// TODO Auto-generated method stub
 }
-public Set<Product> findAll() {
+public List<Product> findAll() {
 	// TODO Auto-generated method stub
-	return null;
+	Session s=sessionFactory.openSession();
+	s.beginTransaction();
+	Query query=s.createQuery("from Product");
+	List<Product> list=query.list();
+	System.out.println(list);
+	s.getTransaction().commit();
+	return list;
 }
 public void delete(int id) {
 	// TODO Auto-generated method stub
 	
 }
-public Product findById(int id) {
-	// TODO Auto-generated method stub
-	return null;
+public Product findById(String id) {
+	return (Product)sessionFactory.openSession().get(Product.class,id);
 }
 }

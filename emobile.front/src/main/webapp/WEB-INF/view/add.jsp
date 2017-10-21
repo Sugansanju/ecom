@@ -25,7 +25,7 @@
 	</header>   -->
    <div class="container">
 
-    <form class="well form-horizontal" action="add " method="POST"  id="add_form">
+    <form class="well form-horizontal" action="add " method="POST"  id="add_form" enctype="multipart/form-data">
 <fieldset>
 
 <!-- Form Name -->
@@ -72,7 +72,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
  <!--  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> -->
-  <input name="pimage" placeholder="Image" class="form-control"  type="text">
+  <input name="pimage" placeholder="Image" class="form-control"  type="file">
     </div>
   </div>
 </div>

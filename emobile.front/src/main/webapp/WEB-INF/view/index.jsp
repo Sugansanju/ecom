@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <%@include file="header.jsp"%>
-<body>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -24,6 +23,8 @@
   </div>
   </div>
 </nav>
+<body>
+
 <div id="site">
 	<header id="masthead">
 		<center ><h1> <p class="text-primary">PEGASUS GAMES SITE <span class="tagline"></span> </p></h1></center>

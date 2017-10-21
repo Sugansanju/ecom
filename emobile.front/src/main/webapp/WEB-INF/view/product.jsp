@@ -39,13 +39,13 @@
 				</div>
 					
 				
-					<div class="details col-md-6">
-						<h3 class="product-title"><b><i>DEAD SPACE 3</i></b></h3>
+					<div class="details col-sm-4">
+						<h3 class="product-title"><b><i>${product.pname}</i></b></h3>
 
-						<p class="product-description">Dead Space 3 is a science fiction survival horror video game developed by Visceral Games and published by Electronic Arts.</p>
+						<p class="product-description">${product.pdescrip}</p>
 						<h4 class="release-date"><b>Initial release date:</b> 5 February 2013</h4>
 						<h4 class="developer"><b>Developer:</b> Visceral Games</h4>
-						<h4 class="price"><b>current price: </b><span>$20.00</span></h4>
+						<h4 class="price"><b>current price: </b><span>${product.pprice}</span></h4>
 						
 						
 						<div class="action">

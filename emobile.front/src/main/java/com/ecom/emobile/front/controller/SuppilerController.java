@@ -22,7 +22,7 @@ public ModelAndView suppiler() {
 ModelAndView mv=new ModelAndView("suppiler");
 	return mv;
 }
-@RequestMapping(value="/add", method=RequestMethod.GET)
+/*@RequestMapping(value="/add", method=RequestMethod.GET)
 public ModelAndView add() {
 ModelAndView mv=new ModelAndView("add");
 	return mv;
@@ -33,5 +33,5 @@ public ModelAndView add(@ModelAttribute("product") Product product){
 	ModelAndView mv=new ModelAndView("products");
 	productDao.save(product);
 	return mv;
-}
+}*/
 }
