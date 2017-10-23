@@ -10,7 +10,7 @@ public interface ProductDao {
 	public void save(Product entity );//User is the Model Class Name Not a Table Name
 	public void delete(int id);
 	public void update(Product entity);
-	public Product findById(String id);
+	public Product findById(int id);
 	//public boolean validate(String email,String password);
 	public List<Product> findAll();
 }

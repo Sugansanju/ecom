@@ -25,7 +25,7 @@
 	</header>   -->
    <div class="container">
 
-    <form class="well form-horizontal" action="add " method="POST"  id="add_form" enctype="multipart/form-data">
+    <form class="well form-horizontal" action="add " method="POST"  id="add_form" ><!-- enctype="multipart/form-data" -->
 <fieldset>
 
 <!-- Form Name -->
@@ -33,17 +33,18 @@
 
 
   
-<!-- Text input-->
+<!--Text input-->
+ <!-- 
 
 <div class="form-group">
   <label class="col-md-4 control-label">Product Id</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
-  <!-- <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> -->
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
   <input  name="pid" placeholder="Product Id" class="form-control"  type="text">
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- Text input-->
 

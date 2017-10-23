@@ -25,7 +25,7 @@
 	</header>   -->
    <div class="container">
 
-    <form class="well form-horizontal" action="add " method="POST"  id="add_form">
+    <form class="well form-horizontal" action="del " method="POST"  id="delete_form">
 <fieldset>
 
 <!-- Text input-->
