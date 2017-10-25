@@ -14,8 +14,8 @@
     </ul>
     
     <ul class="nav navbar-nav navbar-right">
-    <li><a href="products"><i class="fa fa-product-hunt"></i>Products</a></li>
-      <li><a href="cart"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
+   <!--  <li><a href="products"><i class="fa fa-product-hunt"></i>Products</a></li> -->
+      <!-- <li><a href="cart"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li> -->
   <!--   <li><a href="cart"><i class="glyphicon glyphicon-shopping-cart">Cart</i></a></li> -->
       <li><a href="register"><span class="glyphicon glyphicon-user"></span>Register</a></li>
       <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>

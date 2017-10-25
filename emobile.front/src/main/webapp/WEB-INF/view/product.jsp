@@ -31,7 +31,7 @@
 					<div class="product col-sm-3 service-image-left">
                     
 						<center>
-							<img id="item-display" src="images\dead3.jpg" alt=""></img>
+							<img id="item-display" src="./resource/images/${product.pimage}" alt=""></img>
 						</center>
 					</div>
 					

@@ -33,7 +33,7 @@
 				<c:forEach items="${products}" var="p">
 				<li>
 						<div class="product-image">
-							<img src="./resource/images/dead1.jpg" alt="" />
+							<img src="./resource/images/${p.pimage}" alt="" />
 						</div>
 						<div class="product-description" data-name="${p.pname}"
 							data-price="20.00">

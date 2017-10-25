@@ -39,7 +39,7 @@ public class ProductController {
 	
 	@RequestMapping(value="/products" , method=RequestMethod.GET)
 	public ModelAndView products() {
-		ModelAndView mv=new ModelAndView ();
+		ModelAndView mv=new ModelAndView ("products");
 		List<Product> products=productDao.findAll();
 		mv.getModelMap().addAttribute("products", products);
 		return mv;

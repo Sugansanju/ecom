@@ -8,6 +8,7 @@
     <div class="navbar-header">
       <a class="navbar-brand" href="#"></a>
     </div>
+    
     <ul class="nav navbar-nav">
       <li class="active"><a href="#"></a></li>
       <li><a href="#"></a></li>
@@ -15,10 +16,11 @@
     </ul>
     <ul class="nav navbar-nav navbar-left">
       <li><a href="suppiler"><span class="glyphicon glyphicon-user"></span>Back</a></li>
-<!--       <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
- -->    </ul>
+<!--<li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->   
+ </ul>
   </div>
 </nav>
+
 <div id="site">
 	<!-- <header id="masthead">
 		<center><h1><p class="text-primary">PEGASUS GAMES SITE <span class="tagline"></p></h1></center>
@@ -29,10 +31,7 @@
 <fieldset>
 
 <!-- Form Name -->
-<legend><center><h2><b>Add Products</b></h2></center></legend><br>
-
-
-  
+<legend><center><h2><b> Add Products </b></h2></center></legend><br>
 <!--Text input-->
  <!-- 
 
@@ -138,14 +137,10 @@
  <input type="submit" class="btn btn-warning"  name="butSubmit" value="Add">
   </div>
 </div>
-
-
 </fieldset>
 </form>
 </div>
-    </div><!-- /.container -->
+    </div>
 	</div>
-
-
 </body>
 </html>	
