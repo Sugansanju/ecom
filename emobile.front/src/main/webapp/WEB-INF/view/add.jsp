@@ -22,40 +22,17 @@
 </nav>
 
 <div id="site">
-	<!-- <header id="masthead">
-		<center><h1><p class="text-primary">PEGASUS GAMES SITE <span class="tagline"></p></h1></center>
-	</header>   -->
-   <div class="container">
 
-    <form class="well form-horizontal" action="add " method="POST"  id="add_form" ><!-- enctype="multipart/form-data" -->
+   <div class="container">
+   <div class="row">
+			<div class="col-md-6 col-sm-offset-3">
+
+    <form class="well form-horizontal" action="newproduct" method="POST"  id="add_form" ><!-- enctype="multipart/form-data" -->
 <fieldset>
 
 <!-- Form Name -->
 <legend><center><h2><b> Add Products </b></h2></center></legend><br>
-<!--Text input-->
- <!-- 
 
-<div class="form-group">
-  <label class="col-md-4 control-label">Product Id</label>  
-  <div class="col-md-4 inputGroupContainer">
-  <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="pid" placeholder="Product Id" class="form-control"  type="text">
-    </div>
-  </div>
-</div> -->
-
-<!-- Text input-->
-
-<div class="form-group">
-  <label class="col-md-4 control-label" >Suppiler Id</label> 
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
- <!--  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> -->
-  <input name="sid" placeholder="Suppiler Id" class="form-control"  type="text">
-    </div>
-  </div>
-</div>
 <!-- Text input-->
 
 <div class="form-group">
@@ -109,27 +86,122 @@
   </div>
 </div>
 
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4"><br>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<!-- <a href="login" role="button" class="btn btn-warning" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSubmit<span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a> -->
+ <input type="submit" class="btn btn-warning"  name="butSubmit" value="Add">
+  </div>
+</div>
+</fieldset>
+</form>
+</div>
+    </div>
+	</div>
+	
+<div id="site">
 
-<!-- <div class="form-group">
+   <div class="container">
+   <div class="row">
+			<div class="col-md-6 col-sm-offset-3">
+
+    <form class="well form-horizontal" action="newcategory " method="POST"  id="add_form" ><!-- enctype="multipart/form-data" -->
+<fieldset>
+
+<!-- Form Name -->
+<form class="well form-horizontal" action="newcategory" method="POST"  id="add_form" >
+<legend><center><h2><b> Add Category</b></h2></center></legend><br>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Category Name</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+ <!--  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> -->
+  <input name="cname" placeholder="Name" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Category Description</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+ <!--  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> -->
+  <input name="cdesc" placeholder="Description" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4"><br>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<!-- <a href="login" role="button" class="btn btn-warning" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSubmit<span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a> -->
+ <input type="submit" class="btn btn-warning"  name="butSubmit" value="Add">
+  </div>
+</div>
+</fieldset>
+</form>
+</div>
+    </div>
+	</div>
+	
+<div id="site">
+
+   <div class="container">
+   <div class="row">
+			<div class="col-md-6 col-sm-offset-3">
+
+    <form class="well form-horizontal" action="newsupplier " method="POST"  id="add_form" ><!-- enctype="multipart/form-data" -->
+<fieldset>
+
+<!-- Form Name -->
+<form class="well form-horizontal" action="newsupplier" method="POST"  id="add_form" >
+<legend><center><h2><b> Add Supplier </b></h2></center></legend><br>
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Name</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+   <!--  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> -->
+  <input name="sname" placeholder="Name" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+       <div class="form-group">
+  <label class="col-md-4 control-label">Email Address</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+       <!--  <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span> -->
+  <input name="semail" placeholder="Email Address" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Contact</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+ <!--  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> -->
+  <input name="scontact" placeholder="Contact" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+<!-- Text input-->
+
+<div class="form-group">
   <label class="col-md-4 control-label" >Address</label> 
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-
- </div>
+ <!--  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> -->
+  <input name="saddress" placeholder="Address" class="form-control"  type="text">
+    </div>
   </div>
 </div>
- -->
 
-       
-
-
-<!-- Select Basic -->
-
-<!-- Success message -->
-<!--<div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Success!.</div>-->
-
-<!-- Button -->
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4"><br>
@@ -144,3 +216,6 @@
 	</div>
 </body>
 </html>	
+
+
+

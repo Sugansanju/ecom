@@ -2,54 +2,54 @@ package com.ecom.emobile.backend.Model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Suppiler")
-
+@Table(name="Supplier")
 public class Supplier {
-	
 @Id
+@GeneratedValue
 @Column(name="s_id")
-private String id;
+private int sid;
 @Column(name="s_name")
-private String name;
+private String sname;
 @Column(name="s_email")
-private int email;
+private String semail;
 @Column(name="s_cont")
-private float contact;
+private String scontact;
 @Column(name="s_add")
-private String address;
-public String getId() {
-	return id;
+private String saddress;
+public int getSid() {
+	return sid;
 }
-public void setId(String id) {
-	this.id = id;
+public void setSid(int sid) {
+	this.sid = sid;
 }
-public String getName() {
-	return name;
+public String getSname() {
+	return sname;
 }
-public void setName(String name) {
-	this.name = name;
+public void setSname(String sname) {
+	this.sname = sname;
 }
-public int getEmail() {
-	return email;
+public String getSemail() {
+	return semail;
 }
-public void setEmail(int email) {
-	this.email = email;
+public void setSemail(String semail) {
+	this.semail = semail;
 }
-public float getContact() {
-	return contact;
+public String getScontact() {
+	return scontact;
 }
-public void setContact(float contact) {
-	this.contact = contact;
+public void setScontact(String string) {
+	this.scontact = string;
 }
-public String getAddress() {
-	return address;
+public String getSaddress() {
+	return saddress;
 }
-public void setAddress(String address) {
-	this.address = address;
+public void setSaddress(String saddress) {
+	this.saddress = saddress;
 }
 
 }

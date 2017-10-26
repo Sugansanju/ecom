@@ -13,11 +13,32 @@
       <li><a href="#"></a></li>
     </ul>
     <ul class="nav navbar-nav navbar-Left">
-    <li><a href="add"><i class="fa fa-product-hunt"></i>Add</a></li>
+<!--     <li class="active"><a href="#"><span class="glyphicon glyphicon-plus"></span>Add</a> -->
+			<li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="glyphicon glyphicon-plus"></span>Add <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="newproduct"><span class="glyphicon glyphicon-plus"></span>Add Product</a></li>
+                        <li><a href="newcategory"><span class="glyphicon glyphicon-plus"></span>Add Category</a></li>
+                        <li><a href="newsupplier"><span class="glyphicon glyphicon-plus"></span>Add Supplier</a></li>
+                        </ul>
+                </li>
+			<!-- <ul>
+				<li class="active"><a href="add/product"><span class="glyphicon glyphicon-plus"></span>Add Product</a>
+				<li class="active"><a href="add/category"><span class="glyphicon glyphicon-plus"></span>Add Category</a>
+				<li class="active"><a href="add/supplier"><span class="glyphicon glyphicon-plus"></span>Add Supplier</a>
+			</ul>
+			 -->
+		</li>
+		<li><a href="update"><span class="glyphicon glyphicon-pencil"></span>Update</a></li>
+		<li><a href="delete"><span class="glyphicon glyphicon-trash"></span>Delete</a></li>
+        <li><a href="view"><span class="glyphicon glyphicon-list-alt"></span>My Products</a></li>
+		
+      </ul>
+    <!-- <li><a href="add"><i class="fa fa-product-hunt"></i>Add</a></li>
     <li><a href=""><i class="glyphicon glyphicon-shopping-cart">Update</i></a></li>
       <li><a href="delete"><span class="glyphicon glyphicon-user"></span>Delete</a></li>
-     <!--  <li><a href=""><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
-    </ul>
+      <li><a href=""><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+ -->    </ul>
     <!-- 
     <ul class="nav navbar-nav navbar-right">
     <li><a href="products"><i class="fa fa-product-hunt"></i>Products</a></li>

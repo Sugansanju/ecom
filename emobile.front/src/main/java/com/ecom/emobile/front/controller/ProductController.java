@@ -14,13 +14,21 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ecom.emobile.backend.Dao.CategoryDao;
 import com.ecom.emobile.backend.Dao.ProductDao;
+import com.ecom.emobile.backend.Dao.SupplierDao;
+import com.ecom.emobile.backend.Model.Category;
 import com.ecom.emobile.backend.Model.Product;
+import com.ecom.emobile.backend.Model.Supplier;
 
 @Controller
 public class ProductController {
 	@Autowired
 	private ProductDao productDao;
+	@Autowired
+	private CategoryDao categoryDao;
+	@Autowired
+	private SupplierDao supplierDao;
 	
 	
 	/*--------SUPPILER PAGE---------*/
@@ -31,8 +39,6 @@ public class ProductController {
 	ModelAndView mv=new ModelAndView("suppiler");
 		return mv;
 	}
-	
-	
 	
 	/*------PRODUCT PAGE---------*/
 	
@@ -56,24 +62,56 @@ public class ProductController {
 	
 /*----------ADD PAGE------------*/
 	
-	
-	
 	@RequestMapping(value="/add" , method=RequestMethod.GET)
 	public ModelAndView add() {
 		ModelAndView mv=new ModelAndView ("add","command",new Product());
 		return mv;
 	}
-	@RequestMapping(value="/add", method=RequestMethod.POST)
-  	public ModelAndView add(@ModelAttribute("product") Product product){
+	/*------Product ADD-------*/
+	@RequestMapping(value="/newproduct" , method=RequestMethod.GET)
+	public ModelAndView addproduct() {
+		ModelAndView mv=new ModelAndView ("add","command",new Product());
+		return mv;
+	}
+	@RequestMapping(value="/newproduct", method=RequestMethod.POST)
+  	public ModelAndView viewproduct(@ModelAttribute("product") Product product){
   		ModelAndView mv=new ModelAndView("products");
   		productDao.save(product);
   		return mv;
 	}
+	/*------Category ADD-------*/
+	@RequestMapping(value="/newcategory", method=RequestMethod.GET)
+	 	public ModelAndView viewCategory(){
+	 		ModelAndView mv=new ModelAndView("add","command",new Category());
+			return mv;
 	
-	
-	
+	}
+	@RequestMapping(value="/newcategory", method=RequestMethod.POST)
+	 	 public ModelAndView addCategory(@ModelAttribute("category") Category category){
+	 	    categoryDao.save(category);
+	 		ModelAndView mv=new ModelAndView("products");
+	 		return mv;
+	 	 }
+	/*------Supplier ADD-------*/
+	@RequestMapping(value="/newsupplier", method=RequestMethod.GET)
+ 	public ModelAndView addSupplier(){
+ 		ModelAndView mv=new ModelAndView("add","command",new Supplier());
+		return mv;
+
+	}	
+    @RequestMapping(value="/newsupplier", method=RequestMethod.POST)
+ 	 public ModelAndView newsupplier (HttpServletRequest request, HttpServletResponse response){
+	     Supplier supplier=new Supplier();
+	     supplier.setSname(request.getParameter("sname"));
+	     supplier.setSemail(request.getParameter("semail"));
+	     supplier.setScontact(request.getParameter("scontact"));
+	     supplier.setSaddress(request.getParameter("saddress"));
+	     supplierDao.save(supplier);
+	ModelAndView mv=new ModelAndView("products");
+	    return mv;
+ 	 }
 	/*-------DELETE PAGE-----------*/
-	
+ 	
 	
 	
 	@RequestMapping(value="/delete" , method=RequestMethod.GET)

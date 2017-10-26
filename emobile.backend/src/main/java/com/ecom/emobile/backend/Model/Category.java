@@ -14,28 +14,28 @@ import javax.persistence.Table;
 	 	@Id
 	 	@GeneratedValue(strategy=GenerationType.AUTO)
 	 	@Column(name="c_id")//,unique=true
-	 	private int id;
+	 	private int cid;
 	 	@Column(name="c_name")
-	 	private String name;
+	 	private String cname;
 	 	@Column(name="c_desc")
-	 	private String  desc;
-	 	public int getid() {
-	 		return id;
+	 	private String  cdesc;
+	 	public int getcid() {
+	 		return cid;
 	 	}
-	 	public void setid(int id) {
-	 		this.id = id;
+	 	public void setcid(int cid) {
+	 		this.cid = cid;
 	 	}
-	 	public String getname() {
-	 		return name;
+	 	public String getcname() {
+	 		return cname;
 	 	}
-	 	public void setname(String name) {
-	 		this.name = name;
+	 	public void setcname(String cname) {
+	 		this.cname = cname;
 	 	}
-	 	public String getdesc() {
-	 		return desc;
+	 	public String getcdesc() {
+	 		return cdesc;
 	 	}
-	 	public void setdesc(String desc) {
-	 		this.desc = desc;
+	 	public void setcdesc(String cdesc) {
+	 		this.cdesc = cdesc;
 	 	}
 	 
 	 	
