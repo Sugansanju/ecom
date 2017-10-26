@@ -3,24 +3,25 @@
 <%@ taglib prefix = "c" uri ="http://java.sun.com/jsp/jstl/core" %>
 <%@include file="header.jsp"%>
 <body>
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#"></a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#"></a></li>
-      <li><a href="#"></a></li>
-      <li><a href="#"></a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
- <li><a href=""><i class="fa fa-product-hunt"></i></a></li>
-    <li><a href=""><i class="glyphicon glyphicon-shopping-cart">Cart</i></a></li>
-      <!-- <li><a href="register"><span class="glyphicon glyphicon-user"></span>Register</a></li> -->
-      <li><a href="logout"><span class="glyphicon glyphicon-log-in"></span>Logout</a></li>
-    </ul>
-  </div>
-</nav>
+ <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        <!--   <a class="navbar-brand" href="#"></a> -->
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href=""><i class="glyphicon glyphicon-shopping-cart">Cart</i></a></li>
+            <li><a href="logout"><span class="glyphicon glyphicon-log-in"></span>Logout</a></li>
+         </ul>
+        </div>
+      </div>
+    </nav>
 <div id="site">
 	<header id="masthead">
 		<center ><h1> <p class="text-primary">PRODUCTS<span class="tagline"></span> </p></h1></center>

@@ -15,7 +15,8 @@
       <li><a href="#"></a></li>
     </ul>
     <ul class="nav navbar-nav navbar-left">
-      <li><a href="suppiler"><span class="glyphicon glyphicon-user"></span>Back</a></li>
+      <li><a href="suppiler" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-chevron-left"></span>>Back</a></li>
 <!--<li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->   
  </ul>
   </div>

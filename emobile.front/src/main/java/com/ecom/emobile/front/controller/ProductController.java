@@ -37,6 +37,8 @@ public class ProductController {
 	@RequestMapping(value="/suppiler", method=RequestMethod.GET)
 	public ModelAndView suppiler() {
 	ModelAndView mv=new ModelAndView("suppiler");
+	List<Product> products=productDao.findAll();
+	mv.getModelMap().addAttribute("products", products);
 		return mv;
 	}
 	
@@ -114,9 +116,9 @@ public class ProductController {
  	
 	
 	
-	@RequestMapping(value="/delete" , method=RequestMethod.GET)
+/*	@RequestMapping(value="/delete" , method=RequestMethod.GET)
 	public ModelAndView delete() {
-		ModelAndView mv=new ModelAndView ("delete"/*,"command",new Product()*/);
+		ModelAndView mv=new ModelAndView ("delete","command",new Product());
 		return mv;
 	}
 	@RequestMapping(value="/del" , method=RequestMethod.POST)
@@ -126,7 +128,7 @@ public class ProductController {
 		 		productDao.delete(pid);
 		 		ModelAndView mv=new ModelAndView("products");
 		 		return mv;
-		 	 }
+		 	 }*/
 	}
 
 
