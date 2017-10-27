@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<%@ taglib prefix = "c" uri ="http://java.sun.com/jsp/jstl/core" %>
 <%@include file="header.jsp"%>
 
 <body>
@@ -54,6 +55,22 @@
     </div>
   </div>
 </div>
+	  <div class="form-group">
+  <label class="col-md-6 control-label" >Category</label> 
+    <div class="col-md-6 inputGroupContainer">
+    <div class="input-group">
+<select   class="form-control" id="cname" tabindex="1" placeholder="Select Category">
+  										 										<!-- <option id="1" value="Puzzles">Puzzles</option>
+     																			<option id="2" value="Runner Games">Runner Games</option>
+     																			<option id="3" value="Thriller Games">Thriller Games</option>
+     																			<option id="4" value="Cookery">Cookery</option> -->
+     									 <c:forEach items="${category}" var="c">
+       									<option value="${c.cname}">${c.cname}</option>
+ 										</c:forEach>
+     									</select>
+     								</div>
+								</div>
+								</div>
 <!-- Text input-->
        <div class="form-group">
   <label class="col-md-4 control-label">Product Description</label>  
@@ -119,6 +136,7 @@
     <div class="input-group">
  <!--  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> -->
   <input name="cname" placeholder="Name" class="form-control"  type="text">
+  
     </div>
   </div>
 </div>

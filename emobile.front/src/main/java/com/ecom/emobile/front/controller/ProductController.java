@@ -73,6 +73,7 @@ public class ProductController {
 	@RequestMapping(value="/newproduct" , method=RequestMethod.GET)
 	public ModelAndView addproduct() {
 		ModelAndView mv=new ModelAndView ("add","command",new Product());
+		mv.getModelMap().addAttribute("category", categoryDao.findAll());
 		return mv;
 	}
 	@RequestMapping(value="/newproduct", method=RequestMethod.POST)
