@@ -34,9 +34,9 @@ public class ProductController {
 	/*--------SUPPILER PAGE---------*/
 	
 	
-	@RequestMapping(value="/suppiler", method=RequestMethod.GET)
+	@RequestMapping(value="/supplier", method=RequestMethod.GET)
 	public ModelAndView suppiler() {
-	ModelAndView mv=new ModelAndView("suppiler");
+	ModelAndView mv=new ModelAndView("supplier");
 	List<Product> products=productDao.findAll();
 	mv.getModelMap().addAttribute("products", products);
 		return mv;
@@ -62,7 +62,7 @@ public class ProductController {
 	
 	
 	
-/*----------ADD PAGE------------*/
+/*----------ADD PAGE------------*/ 
 	
 	@RequestMapping(value="/add" , method=RequestMethod.GET)
 	public ModelAndView add() {
@@ -71,65 +71,48 @@ public class ProductController {
 	}
 	/*------Product ADD-------*/
 	@RequestMapping(value="/newproduct" , method=RequestMethod.GET)
-	public ModelAndView addproduct() {
+	public ModelAndView addproduct(HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mv=new ModelAndView ("add","command",new Product());
-		mv.getModelMap().addAttribute("category", categoryDao.findAll());
+		request.setAttribute("categories", categoryDao.findAll());
+		request.setAttribute("supplier",supplierDao.findAll());
 		return mv;
 	}
+	/*@RequestMapping(value="/newproduct", method=RequestMethod.GET)
+  	public ModelAndView addProduct(){
+		ModelAndView mv=new ModelAndView ("add","command",new Product());
+		List<Product> products=productDao.findAll();
+		mv.getModelMap().addAttribute("categories", categoryDao.findAll());
+		mv.getModelMap().addAttribute("suppliers", supplierDao.findAll());
+
+		mv.getModelMap().addAttribute("products", products);
+		return mv;
+	}*/
 	@RequestMapping(value="/newproduct", method=RequestMethod.POST)
-  	public ModelAndView viewproduct(@ModelAttribute("product") Product product){
-  		ModelAndView mv=new ModelAndView("products");
-  		productDao.save(product);
-  		return mv;
-	}
-	/*------Category ADD-------*/
-	@RequestMapping(value="/newcategory", method=RequestMethod.GET)
-	 	public ModelAndView viewCategory(){
-	 		ModelAndView mv=new ModelAndView("add","command",new Category());
-			return mv;
-	
-	}
-	@RequestMapping(value="/newcategory", method=RequestMethod.POST)
-	 	 public ModelAndView addCategory(@ModelAttribute("category") Category category){
-	 	    categoryDao.save(category);
+	 	 public ModelAndView newProduct(HttpServletRequest request, HttpServletResponse response){
+	 		//Category category=categoryDao.findById(Integer.parseInt(request.getParameter("cid")));
+	 		Supplier supplier=supplierDao.findById(Integer.parseInt(request.getParameter("sid")));
+	 		Product product =new Product();
+	 		product.setPname(request.getParameter("pname"));
+	 		product.setPquantity(Integer.parseInt(request.getParameter("pquantity")));
+	 		product.setPdescrip(request.getParameter("pdescrip"));
+	 		product.setPprice(Float.parseFloat(request.getParameter("pprice"))) ;
+	 		product.setPimage(request.getParameter("pimage"));
+	 		//product.setCid(category);
+	 		product.setSid(supplier);
+	 		productDao.save(product);
 	 		ModelAndView mv=new ModelAndView("products");
 	 		return mv;
 	 	 }
-	/*------Supplier ADD-------*/
-	@RequestMapping(value="/newsupplier", method=RequestMethod.GET)
- 	public ModelAndView addSupplier(){
- 		ModelAndView mv=new ModelAndView("add","command",new Supplier());
-		return mv;
-
-	}	
-    @RequestMapping(value="/newsupplier", method=RequestMethod.POST)
- 	 public ModelAndView newsupplier (HttpServletRequest request, HttpServletResponse response){
-	     Supplier supplier=new Supplier();
-	     supplier.setSname(request.getParameter("sname"));
-	     supplier.setSemail(request.getParameter("semail"));
-	     supplier.setScontact(request.getParameter("scontact"));
-	     supplier.setSaddress(request.getParameter("saddress"));
-	     supplierDao.save(supplier);
-	ModelAndView mv=new ModelAndView("products");
-	    return mv;
- 	 }
+	
+	
 	/*-------DELETE PAGE-----------*/
- 	
-	
-	
-/*	@RequestMapping(value="/delete" , method=RequestMethod.GET)
-	public ModelAndView delete() {
-		ModelAndView mv=new ModelAndView ("delete","command",new Product());
-		return mv;
-	}
-	@RequestMapping(value="/del" , method=RequestMethod.POST)
-	public ModelAndView del(HttpServletRequest request, HttpServletResponse response){
-		 		int pid=Integer.parseInt(request.getParameter("pid"));
-		 		//Product product=productDao.delete(id);	
-		 		productDao.delete(pid);
-		 		ModelAndView mv=new ModelAndView("products");
-		 		return mv;
-		 	 }*/
+    @RequestMapping(value="/delete", method=RequestMethod.GET)
+    			public ModelAndView delete(@RequestParam("id") int id){
+    				ModelAndView mv=new ModelAndView("product","command", new Product());
+    				productDao.delete(id);
+    				mv.getModelMap().addAttribute("products", productDao.findAll());
+    				return mv;
+    			}	
 	}
 
 
