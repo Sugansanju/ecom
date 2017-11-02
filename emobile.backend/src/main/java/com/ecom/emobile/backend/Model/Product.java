@@ -25,9 +25,9 @@ public class Product {
 	
 	@Column(name="Product_pname")
     private String pname;
-	
+
 	@ManyToOne(cascade=CascadeType.ALL)
-	private Category cid;
+	private Category category;
 	
 	@Column(name="Product_pdescrip")
     private String pdescrip;
@@ -37,54 +37,71 @@ public class Product {
 	
 	@Column(name="Product_pprice")
     private float pprice;
-	
+
 	public int getPid() {
 		return pid;
 	}
+
 	public void setPid(int pid) {
 		this.pid = pid;
 	}
+
 	public Supplier getSid() {
 		return sid;
 	}
+
 	public void setSid(Supplier sid) {
 		this.sid = sid;
 	}
+
 	public String getPimage() {
 		return pimage;
 	}
+
 	public void setPimage(String pimage) {
 		this.pimage = pimage;
 	}
+
 	public String getPname() {
 		return pname;
 	}
+
 	public void setPname(String pname) {
 		this.pname = pname;
 	}
-	public Category getCid() {
-		return cid;
+
+	public Category getCategory() {
+		return category;
 	}
-	public void setCid(Category cid) {
-		this.cid = cid;
+
+	public void setCategory(Category category) {
+		this.category = category;
 	}
+
 	public String getPdescrip() {
 		return pdescrip;
 	}
+
 	public void setPdescrip(String pdescrip) {
 		this.pdescrip = pdescrip;
 	}
+
 	public int getPquantity() {
 		return pquantity;
 	}
+
 	public void setPquantity(int pquantity) {
 		this.pquantity = pquantity;
 	}
+
 	public float getPprice() {
 		return pprice;
 	}
+
 	public void setPprice(float pprice) {
 		this.pprice = pprice;
 	}
+	
+	
 
 }

@@ -11,7 +11,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.ecom.emobile.backend.Dao.ProductDao;
 import com.ecom.emobile.backend.Dao.UserDao;
 import com.ecom.emobile.backend.Model.Product;
-import com.ecom.emobile.backend.Model.User;
 
 @Controller
 public class HomeController {

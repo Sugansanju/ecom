@@ -3,41 +3,33 @@ package com.ecom.emobile.backend.Model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="Category")
 
-	 public class Category {
-	 	@Id
-	 	@GeneratedValue
-	 	@Column(name="c_id")//,unique=true
-	 	private int cid;
-	 	@Column(name="c_name")
-	 	private String cname;
-	 	@Column(name="c_desc")
-	 	private String  cdesc;
-	 	public int getcid() {
-	 		return cid;
-	 	}
-	 	public void setcid(int cid) {
-	 		this.cid = cid;
-	 	}
-	 	public String getcname() {
-	 		return cname;
-	 	}
-	 	public void setcname(String cname) {
-	 		this.cname = cname;
-	 	}
-	 	public String getcdesc() {
-	 		return cdesc;
-	 	}
-	 	public void setcdesc(String cdesc) {
-	 		this.cdesc = cdesc;
-	 	}
-	 
-	 	
-	 
-	 }
-
+public class Category {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column (name="C_id")
+	private int cid;
+	@Column(name="C_name")
+	private String cname;
+	
+	public int getCid() {
+		return cid;
+	}
+	public void setCid(int cid) {
+		this.cid = cid;
+	}
+	public String getCname() {
+		return cname;
+	}
+	public void setCname(String cname) {
+		this.cname = cname;
+	}
+	
+	
+}

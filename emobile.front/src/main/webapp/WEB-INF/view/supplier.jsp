@@ -4,9 +4,9 @@
 <%@include file="header.jsp"%>
 <style type="text/css">
     body {
-        color: #566787;
+        color:#2a1de0;
 		background: #f5f5f5;
-		font-family: 'Varela Round', sans-serif;
+		font-family: "Comic Sans MS", cursive, sans-serif;
 		font-size: 13px;
 	}
 	.table-wrapper {
@@ -250,35 +250,7 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#"></a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#"></a></li>
-      <li><a href="#"></a></li>
-      <li><a href="#"></a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-Left">
-<!--     <li class="active"><a href="#"><span class="glyphicon glyphicon-plus"></span>Add</a> -->
-			<li class="dropdown">
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="glyphicon glyphicon-plus"></span>Add <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="newproduct"><span class="glyphicon glyphicon-plus"></span>Add Product</a></li>
-                        <li><a href="newcategory"><span class="glyphicon glyphicon-plus"></span>Add Category</a></li>
-                        <li><a href="newsupplier"><span class="glyphicon glyphicon-plus"></span>Add Supplier</a></li>
-                        </ul>
-                </li>
-		</li>
-		<li><a href="update"><span class="glyphicon glyphicon-pencil"></span>Update</a></li>
-		<li><a href="delete"><span class="glyphicon glyphicon-trash"></span>Delete</a></li>
-        <li><a href="view"><span class="glyphicon glyphicon-list-alt"></span>My Products</a></li>
-		
-      </ul>
-
-  </div>
-</nav>
+ <%@include file="navbar.jsp" %>
 <div class="container">
         <div class="table-wrapper">
             <div class="table-title">
@@ -286,10 +258,6 @@ $(document).ready(function(){
                     <div class="col-sm-6">
 						<h2>Products</h2>
 					</div>
-			<!-- 		<div class="col-sm-6">
-						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Employee</span></a>
-						<a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
-					</div> -->
                 </div>
             </div>
             <table class="table table-striped table-hover">
@@ -297,7 +265,7 @@ $(document).ready(function(){
                     <tr>
 		<div class="container"> 
 		<div class="row">
-			<div class="col-md-10">
+			<div class="col-md-12">
 				
 				<div class="col-md-2">
 					<b>ID</b>
@@ -319,82 +287,190 @@ $(document).ready(function(){
 				</div>
 			</div>
 		</div>
-                    </tr>
-                
-                <tbody>
+       </div>             </tr>
+ 
+              </thead> 
+ <tbody>
+
                     <tr>
 						<c:forEach items="${products}" var="p">
 		<div class="row">
-			<div class="col-md-10">
+			<div class="col-md-12">
+				
 				<div class="col-md-2">
-					${p.pid}
+				<br>
+					&nbsp&nbsp&nbsp&nbsp${p.pid}
 				</div>
 				<div class="col-md-2">
+				<br>
+					&nbsp&nbsp&nbsp&nbsp&nbsp
 					${p.pname}
 				</div>
 				<div class="col-md-2">
+				<br>
+					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 					${p.pdescrip}
 				</div>
 				<div class="col-md-2">
+				<br>
+					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 					${p.pquantity}
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-2">		
+				<br>
+					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp		
 					${p.pprice}
 				</div>
 				<div class="col-md-2">
-					<a href="edit?id=${p.pid}"><span class="glyphicon glyphicon-edit"></span></a>
-					<a href="delete?id=${p.pid}"><span class="glyphicon glyphicon-trash"></span></a>
+				<br>
+					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+					<a href="updateproduct?id=${p.pid}"><span class="glyphicon glyphicon-edit"></span></a>
+					<a href="deleteproduct?id=${p.pid}"><span class="glyphicon glyphicon-trash"></span></a>
+				</div>
+				</div>
+		</div>
+		</c:forEach>
+               </tr>
+            </table>
+			</div>
+		</div>
+		<div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+						<h2>Category</h2>
+					</div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+		<div class="container"> 
+		<div class="row">
+			<div class="col-md-10">
+			<div class="col-md-1">
+					<b>ID</b>
+				</div>
+				<div class="col-md-3">
+					<b>NAME</b>
+				</div>
+				<div class="col-md-3">
+					<b>ACTION</b>
 				</div>
 			</div>
-		</div>		
+		</div>
+       </div>             </tr>
+ 
+              </thead> 
+ <tbody>
+
+                    <tr>
+						<c:forEach items="${category}" var="cat">
+		<div class="row">
+			<div class="col-md-10">
+				<div class="col-md-1">
+				<br>
+					&nbsp&nbsp&nbsp&nbsp${cat.cid}
+				</div>
+				<div class="col-md-3">
+				<br>
+					&nbsp&nbsp&nbsp&nbsp${cat.cname}
+				</div>
+				<div class="col-md-3">
+				<br>
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+					<a href="updatecategory?id=${cat.cid}"><span class="glyphicon glyphicon-edit"></span></a>
+					<a href="deletecategory?id=${cat.cid}"><span class="glyphicon glyphicon-trash"></span></a>
+				</div>
+				</div>
+		</div>
 		</c:forEach>
-		</tr>
-		 </tbody>
-		 </thead>
+               </tr>
             </table>
-                      <!--   <td>Thomas Hardy</td>
-                        <td>thomashardy@mail.com</td>
-						<td>89 Chiaroscuro Rd, Portland, USA</td>
-                        <td>(171) 555-2222</td>
-                        <td>
-                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                        </td>
-                    </tr>
-                       </tbody>
-            </table> -->
-<%-- <div id="site">
-	<header id="masthead">
-		<center ><h1> <p class="text-primary">Add Details <span class="tagline"></span> </p></h1></center>
-	</header>
-	<div id="content">
-			<div id="products">
-				<ul>
-				<c:forEach items="${products}" var="p">
-				<li>
-						<div class="product-image">
-							<img src="./resource/images/${p.pimage}" alt="" />
-						</div>
-						<div class="product-description" data-name="${p.pname}"
-							data-price="20.00">
-							<h3 class="product-name">${p.pname}</h3>
-							<p class="product-price">${p.pprice}</p>
-							<form class="add-to-cart" action="cart" method="post">
-								<div>
-									<label for="qty-1">Quantity</label> <input type="text"
-										name="qty-1" id="qty-1" class="qty" value="1" />
-								</div>
-								<p>
-									<input type="submit" value="Add to cart" class="btn" />
-									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="product?id=${p.pid}"
-										role="button" class="btn btn-warning">Details</a>
-								</p>
-							</form>
-						</div>
-					</li>					
-				</c:forEach>
-					
-				</ul> --%>
+			</div>
+		</div>
+		<div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+						<h2>Products</h2>
+					</div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+		<div class="container"> 
+		<div class="row">
+			<div class="col-md-12">
+				
+				<div class="col-md-2">
+					<b>ID</b>
+				</div>
+				<div class="col-md-2">
+					<b>NAME</b>
+				</div>
+				<div class="col-md-2">
+					<b>EMAIL</b>
+				</div>
+				<div class="col-md-2">
+					<b>CONTACT</b>
+				</div>
+				<div class="col-md-2">				
+					<b>ADDRESS</b>
+				</div>
+				<div class="col-md-2">
+					<b>ACTION</b>
+				</div>
+			</div>
+		</div>
+       </div>             </tr>
+ 
+              </thead> 
+ <tbody>
+
+                    <tr>
+						<c:forEach items="${supplier}" var="s">
+		<div class="row">
+			<div class="col-md-12">
+				
+				<div class="col-md-2">
+				<br>
+					&nbsp&nbsp&nbsp&nbsp${s.sid}
+				</div>
+				<div class="col-md-2">
+				<br>
+					&nbsp&nbsp&nbsp&nbsp&nbsp
+					${s.sname}
+				</div>
+				<div class="col-md-2">
+				<br>
+					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+					${s.semail}
+				</div>
+				<div class="col-md-2">
+				<br>
+					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+					${s.scontact}
+				</div>
+				<div class="col-md-2">		
+				<br>
+					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp		
+					${s.saddress}
+				</div>
+				<div class="col-md-2">
+				<br>
+					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+					<a href="updatesupplier?id=${s.sid}"><span class="glyphicon glyphicon-edit"></span></a>
+					<a href="deletesupplier?id=${s.sid}"><span class="glyphicon glyphicon-trash"></span></a>
+				</div>
+				</div>
+		</div>
+		</c:forEach>
+               </tr>
+            </table>
 			</div>
 		</div>
 </body>

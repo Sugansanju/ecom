@@ -2,6 +2,7 @@ package com.ecom.emobile.front.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -42,13 +43,23 @@ public ModelAndView validate(HttpServletRequest request, HttpServletResponse res
 	User user=userDao.findById(request.getParameter("txtemail"));	
 	ModelAndView mv=null;
 	if(email.equals(user.getEmail()) && password.equals(user.getPassword())){
-		mv=new ModelAndView("index");
+		HttpSession session=request.getSession(true);
+		session.setAttribute("email", email);
+		mv=new ModelAndView("redirect:./");
 		mv.getModelMap().addAttribute("user", user);
 	}
 	else{
 		mv=new ModelAndView("failure");		
 		mv.getModelMap().addAttribute("user", user);
 	}			
+	return mv;
+}
+@RequestMapping(value="/logout", method=RequestMethod.GET)
+public ModelAndView logout(HttpServletRequest request, HttpServletResponse response){
+	HttpSession session=request.getSession(false);
+	if(session!=null)
+		session.invalidate();
+	ModelAndView mv=new ModelAndView("redirect:./");
 	return mv;
 }
 }

@@ -1,7 +1,6 @@
 package com.ecom.emobile.front.controller;
 
 import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -38,8 +37,12 @@ public class ProductController {
 	public ModelAndView suppiler() {
 	ModelAndView mv=new ModelAndView("supplier");
 	List<Product> products=productDao.findAll();
+	List<Category> category=categoryDao.findAll();
+	List<Supplier> supplier=supplierDao.findAll();
 	mv.getModelMap().addAttribute("products", products);
-		return mv;
+	mv.getModelMap().addAttribute("category", category);
+	mv.getModelMap().addAttribute("supplier",supplier);	
+	return mv;
 	}
 	
 	/*------PRODUCT PAGE---------*/
@@ -72,7 +75,7 @@ public class ProductController {
 	/*------Product ADD-------*/
 	@RequestMapping(value="/newproduct" , method=RequestMethod.GET)
 	public ModelAndView addproduct(HttpServletRequest request, HttpServletResponse response) {
-		ModelAndView mv=new ModelAndView ("add","command",new Product());
+		ModelAndView mv=new ModelAndView("add");
 		request.setAttribute("categories", categoryDao.findAll());
 		request.setAttribute("supplier",supplierDao.findAll());
 		return mv;
@@ -89,26 +92,58 @@ public class ProductController {
 	}*/
 	@RequestMapping(value="/newproduct", method=RequestMethod.POST)
 	 	 public ModelAndView newProduct(HttpServletRequest request, HttpServletResponse response){
-	 		//Category category=categoryDao.findById(Integer.parseInt(request.getParameter("cid")));
-	 		Supplier supplier=supplierDao.findById(Integer.parseInt(request.getParameter("sid")));
+	 	Category category=categoryDao.findById(Integer.parseInt(request.getParameter("cid")));
+		Supplier supplier=supplierDao.findById(Integer.parseInt(request.getParameter("sid")));
 	 		Product product =new Product();
 	 		product.setPname(request.getParameter("pname"));
 	 		product.setPquantity(Integer.parseInt(request.getParameter("pquantity")));
 	 		product.setPdescrip(request.getParameter("pdescrip"));
 	 		product.setPprice(Float.parseFloat(request.getParameter("pprice"))) ;
 	 		product.setPimage(request.getParameter("pimage"));
-	 		//product.setCid(category);
+	 		product.setCategory(category);
 	 		product.setSid(supplier);
 	 		productDao.save(product);
 	 		ModelAndView mv=new ModelAndView("products");
 	 		return mv;
 	 	 }
+	/*----------UPDATE PAGE-------------*/
+	@RequestMapping(value="/updateproduct" , method=RequestMethod.GET) 
+			public ModelAndView viewUpdate(Model model,@RequestParam("id") int pid){
+		 		ModelAndView mv=new ModelAndView("update");
+		 		Product product=productDao.findById(pid);
+		 		mv.getModelMap().addAttribute("product", product);
+		  		mv.getModelMap().addAttribute("categories", categoryDao.findAll());
+		  		mv.getModelMap().addAttribute("supplier", supplierDao.findAll());
+		  		return mv;
+		  }	
+	@RequestMapping(value="/updateproduct", method=RequestMethod.POST)
+	// public ModelAndView updateProduct(@ModelAttribute("product") Product product){
+	public ModelAndView updateProduct(HttpServletRequest request, HttpServletResponse response){
+		ModelAndView mv=new ModelAndView("redirect:supplier");
+		Category category=categoryDao.findById(Integer.parseInt(request.getParameter("cid")));
+		Supplier supplier=supplierDao.findById(Integer.parseInt(request.getParameter("sid")));
+		Product product =new Product();
+		product.setPid(Integer.parseInt(request.getParameter("pid")));
+		product.setPname(request.getParameter("pname"));
+		product.setPquantity(Integer.parseInt(request.getParameter("pquantity")));
+		product.setPdescrip(request.getParameter("pdescrip"));
+		product.setPprice(Float.parseFloat(request.getParameter("pprice"))) ;
+		product.setPimage(request.getParameter("pimage"));
+		product.setCategory(category);
+		product.setSid(supplier);
+		productDao.update(product);
+		mv.getModelMap().addAttribute("supplier", productDao.findAll());
+		return mv;
+		
+	 }
+	
+
 	
 	
 	/*-------DELETE PAGE-----------*/
-    @RequestMapping(value="/delete", method=RequestMethod.GET)
+    @RequestMapping(value="/deleteproduct", method=RequestMethod.GET)
     			public ModelAndView delete(@RequestParam("id") int id){
-    				ModelAndView mv=new ModelAndView("product","command", new Product());
+    				ModelAndView mv=new ModelAndView("supplier","command", new Product());
     				productDao.delete(id);
     				mv.getModelMap().addAttribute("products", productDao.findAll());
     				return mv;

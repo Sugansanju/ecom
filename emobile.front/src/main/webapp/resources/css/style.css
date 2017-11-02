@@ -12,7 +12,7 @@ html, body {
 }
 
 body {
-	font: 100%/1 'Roboto', serif;
+	font: 100%/1 "Comic Sans MS", cursive, sans-serif;
 	background: #fafafa;
 	color: #333;
 	border-top: 0.5em solid #cc8500;	
@@ -130,7 +130,7 @@ form.add-to-cart p {
 form input.qty {
 	width: 40px;
 	border: 1px solid #eee;
-	font: 1em 'PT Serif', serif;
+	font: 1em "Comic Sans MS", cursive, sans-serif0;
 	background: #f9f9f9;
 	color: #000;
 	border-radius: 3px;
@@ -141,7 +141,7 @@ form input.qty {
 	display: inline-block;
 	background: #cc1400;
 	color: #fff;
-	font: 1em 'PT Serif', serif;
+	font: 1em "Comic Sans MS", cursive, sans-serif;
 	padding: 0.3em 1em;
 	text-align: center;
 	border-radius: 4px;

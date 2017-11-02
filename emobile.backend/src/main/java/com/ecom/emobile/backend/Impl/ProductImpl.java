@@ -24,7 +24,7 @@ public void update(Product entity) {
 	// TODO Auto-generated method stub
 	Session s=sessionFactory.openSession();
 	s.beginTransaction();
-	s.save(entity);
+	s.saveOrUpdate(entity);
 	s.getTransaction().commit();
 	s.close();	
 }

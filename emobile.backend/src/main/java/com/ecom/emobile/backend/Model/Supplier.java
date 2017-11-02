@@ -42,8 +42,8 @@ public void setSemail(String semail) {
 public String getScontact() {
 	return scontact;
 }
-public void setScontact(String string) {
-	this.scontact = string;
+public void setScontact(String scontact) {
+	this.scontact = scontact;
 }
 public String getSaddress() {
 	return saddress;
@@ -51,5 +51,6 @@ public String getSaddress() {
 public void setSaddress(String saddress) {
 	this.saddress = saddress;
 }
+
 
 }

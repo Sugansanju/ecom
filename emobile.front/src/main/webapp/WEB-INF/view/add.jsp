@@ -7,25 +7,7 @@
 <%@include file="header.jsp"%>
 
 <body>
-	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#"></a>
-			</div>
-
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="#"></a></li>
-				<li><a href="#"></a></li>
-				<li><a href="#"></a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-left">
-				<li><a href="suppiler" class="btn btn-info btn-lg"> <span
-						class="glyphicon glyphicon-chevron-left"></span>Back
-				</a></li>
-				<!--<li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
-			</ul>
-		</div>
-	</nav>
+	 <%@include file="navbar.jsp" %>
 
 	<div id="site">
 
@@ -65,9 +47,9 @@
 								<label class="col-md-4 control-label">Supplier Name</label>
 								<div class="col-md-4 inputGroupContainer">
 									<div class="input-group"></div>
-									<select   class="form-control" name="sid" id="sid" tabindex="1" placeholder="Select Category">
-    									 <c:forEach items="${supplier}" var="c">
-      									<option value="${c.sid}">${c.sname}</option>
+									<select   class="form-control" name="sid" id="sid" tabindex="1" placeholder="Select Supplier">
+    									 <c:forEach items="${supplier}" var="s">
+      									<option value="${s.sid}">${s.sname}</option>
 										</c:forEach>
     									</select>
 								</div> 
@@ -83,19 +65,17 @@
 									</div>
 								</div>
 							</div>
-							<%-- ${header["user-agent"]} --%>
-							<div class="form-group">
-								<label class="col-md-4 control-label">Category</label>
+<div class="form-group">
+								<label class="col-md-4 control-label">Category Name</label>
 								<div class="col-md-4 inputGroupContainer">
 									<div class="input-group"></div>
-									<select name="cname">
-										<c:forEach items="${categories}" var="c">
-											<option value="${c.cid}">${c.cname}</option>
+									<select   class="form-control" name="cid" id="cid" tabindex="1" placeholder="Select ">
+    									 <c:forEach items="${categories}" var="c">
+      									<option value="${c.cid}">${c.cname}</option>
 										</c:forEach>
-									</select>
+    									</select>
 								</div> 
-							</div>
-							<!-- Text input-->
+							</div>					<!-- Text input-->
 							<div class="form-group">
 								<label class="col-md-4 control-label">Product
 									Description</label>
@@ -184,17 +164,17 @@
 									</div>
 									<!-- Text input-->
 
-									<div class="form-group">
+									<!-- <div class="form-group">
 										<label class="col-md-4 control-label">Category
 											Description</label>
 										<div class="col-md-4 inputGroupContainer">
 											<div class="input-group">
-												<!--  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> -->
+												 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 												<input name="cdesc" placeholder="Description"
 													class="form-control" type="text">
 											</div>
 										</div>
-									</div>
+									</div> -->
 									<div class="form-group">
 										<label class="col-md-4 control-label"></label>
 										<div class="col-md-4">
