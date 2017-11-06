@@ -85,7 +85,7 @@
   </div>
 </div>
 
-
+<!-- 
 <div class="form-group">
   <label class="col-md-4 control-label" >Address</label> 
     <div class="col-md-4 inputGroupContainer">
@@ -94,22 +94,11 @@
 
  </div>
   </div>
-</div>
-
-
-       
-
-
-<!-- Select Basic -->
-
-<!-- Success message -->
-<!--<div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Success!.</div>-->
-
-<!-- Button -->
+</div> -->
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4"><br>
-    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<!-- <a href="login" role="button" class="btn btn-warning" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSubmit<span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a> -->
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
  <input type="submit" class="btn btn-warning"  name="butSubmit" value="Register">
   </div>
 </div>
@@ -118,8 +107,7 @@
 </fieldset>
 </form>
 </div>
-    </div><!-- /.container -->
-	</div>
+    </div>
 
 
 </body>

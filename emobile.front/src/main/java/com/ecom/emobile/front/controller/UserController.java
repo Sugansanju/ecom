@@ -25,7 +25,14 @@ public ModelAndView register() {
 	return mv;
 }
 @RequestMapping(value="/register", method=RequestMethod.POST)
-public ModelAndView login(@ModelAttribute("user") User user){
+public ModelAndView login(HttpServletRequest request, HttpServletResponse response){
+	User user=new User();
+	user.setName(request.getParameter("name"));
+	user.setEmail(request.getParameter("email"));
+	user.setPassword(request.getParameter("password"));
+	user.setContact(request.getParameter("contact"));
+	user.setAddress(request.getParameter("address"));
+	user.setRole("ROLE_USER");
 	ModelAndView mv=new ModelAndView("login");
 	userDao.save(user);
 	return mv;
@@ -45,8 +52,10 @@ public ModelAndView validate(HttpServletRequest request, HttpServletResponse res
 	if(email.equals(user.getEmail()) && password.equals(user.getPassword())){
 		HttpSession session=request.getSession(true);
 		session.setAttribute("email", email);
+		mv=new ModelAndView();
 		mv=new ModelAndView("redirect:./");
-		mv.getModelMap().addAttribute("user", user);
+ 		//mv.getModelMap().addAttribute("user", user);
+	
 	}
 	else{
 		mv=new ModelAndView("failure");		

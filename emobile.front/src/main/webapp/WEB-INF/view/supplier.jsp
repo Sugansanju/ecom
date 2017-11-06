@@ -258,6 +258,11 @@ $(document).ready(function(){
                     <div class="col-sm-6">
 						<h2>Products</h2>
 					</div>
+					<div class="col-sm-6">
+					 <a href="newproduct"  class="btn btn-success" >ADD</a>
+						<!-- <a href="newproduct" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> ADD PRODUCT</a> -->
+												
+					</div>
                 </div>
             </div>
             <table class="table table-striped table-hover">
@@ -341,6 +346,11 @@ $(document).ready(function(){
                     <div class="col-sm-6">
 						<h2>Category</h2>
 					</div>
+					<div class="col-sm-6">
+					 <a href="newcategory"  class="btn btn-success" >ADD</a>
+						<!-- <a href="newproduct" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> ADD PRODUCT</a> -->
+												
+					</div>
                 </div>
             </div>
             <table class="table table-striped table-hover">
@@ -395,7 +405,12 @@ $(document).ready(function(){
             <div class="table-title">
                 <div class="row">
                     <div class="col-sm-6">
-						<h2>Products</h2>
+						<h2>Supplier</h2>
+					</div>
+					<div class="col-sm-6">
+					 <a href="newsupplier"  class="btn btn-success" >ADD</a>
+						<!-- <a href="newproduct" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> ADD PRODUCT</a> -->
+												
 					</div>
                 </div>
             </div>
