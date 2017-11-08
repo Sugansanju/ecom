@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html>
+<%@page isELIgnored="false" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@include file="header.jsp"%>
 <body>
  <%@include file="navbar.jsp" %>
 <div id="site">
 	<header id="masthead">
-		<center><h1> <p class="text-primary">PEGASUS GAMES SITE <span class="tagline"></p> </h1> </center>
+		<center>
+		<h1> 
+		<p class="text-primary">PEGASUS GAMES SITE 
+		<span class="tagline"></span></p> 
+		</h1> 
+		</center>
 	</header>
 	  <div class="wrapper">
-    <form class="form-signin" action="validate" method="POST">       
+    <form class="form-signin" action="login" method="POST">       
       <h2 class="form-signin-heading">Please login</h2>
       <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-      <input type="text" class="form-control" name="txtemail" placeholder="Email Address" required=" " autofocus=" " />
-      <input type="password" class="form-control" name="txtpassword" placeholder="Password" required=" " />      
+      <input type="text" class="form-control" name="username" placeholder="Email Address" required=" " autofocus=" " />
+      <input type="password" class="form-control" name="password" placeholder="Password" required=" " />      
       <label class="checkbox">
         <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
       </label>

@@ -1,4 +1,4 @@
-package com.ecom.emobile.front.controller;
+/*package com.ecom.emobile.front.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,14 +20,14 @@ import com.ecom.emobile.backend.Model.Supplier;
 public class SupplierController {
 	@Autowired
 	private SupplierDao supplierDao;
-	/*------Supplier ADD-------*/
-	@RequestMapping(value="admin/newsupplier", method=RequestMethod.GET)
+	------Supplier ADD-------
+	@RequestMapping(value="newsupplier", method=RequestMethod.GET)
  	public ModelAndView addSupplier(){
  		ModelAndView mv=new ModelAndView("add","command",new Supplier());
 		return mv;
 
 	}	
-    @RequestMapping(value="admin/newsupplier", method=RequestMethod.POST)
+    @RequestMapping(value="newsupplier", method=RequestMethod.POST)
  	 public ModelAndView newsupplier (HttpServletRequest request, HttpServletResponse response){
 	     Supplier supplier=new Supplier();
 	     supplier.setSname(request.getParameter("sname"));
@@ -38,15 +38,15 @@ public class SupplierController {
 	ModelAndView mv=new ModelAndView("products");
 	    return mv;
  	 }
-    /*-----------Update Supplier---------*/
-    @RequestMapping(value="admin/updatesupplier" , method=RequestMethod.GET) 
+    -----------Update Supplier---------
+    @RequestMapping(value="updatesupplier" , method=RequestMethod.GET) 
 	public ModelAndView viewUpdate(Model model,@RequestParam("id") int sid){
  		ModelAndView mv=new ModelAndView("update");
  		Supplier supplier=supplierDao.findById(sid);
   		mv.getModelMap().addAttribute("sup", supplier);
   		return mv;
   }	
-    @RequestMapping(value="admin/updatesupplier", method=RequestMethod.POST)
+    @RequestMapping(value="updatesupplier", method=RequestMethod.POST)
 	// public ModelAndView updateProduct(@ModelAttribute("product") Product product){
 	public ModelAndView updateProduct(HttpServletRequest request, HttpServletResponse response){
 		ModelAndView mv=new ModelAndView("redirect:supplier");
@@ -61,7 +61,7 @@ public class SupplierController {
 		return mv;
 		
 	 }
-    @RequestMapping(value="admin/deletesupplier", method=RequestMethod.GET)
+    @RequestMapping(value="deletesupplier", method=RequestMethod.GET)
 	public ModelAndView delete(@RequestParam("id") int id){
 		ModelAndView mv=new ModelAndView("supplier","command", new Supplier());
 		supplierDao.delete(id);
@@ -69,3 +69,4 @@ public class SupplierController {
 		return mv;
 	}	
 }
+*/

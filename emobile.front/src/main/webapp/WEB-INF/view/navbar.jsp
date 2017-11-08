@@ -33,7 +33,7 @@
 							<ul class="nav navbar-nav navbar-Left">
 							
 							
-							<a href="supplier"><span class="glyphicon glyphicon-user"></span>ADMIN ACTIVITY</a></li>
+							<a href="admin/supplier"><span class="glyphicon glyphicon-user"></span>ADMIN ACTIVITY</a></li>
 			
                         </ul>
                         </c:if>

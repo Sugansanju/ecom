@@ -62,7 +62,7 @@ public ModelAndView validate(HttpServletRequest request, HttpServletResponse res
 		session.setAttribute("email", email);
 		mv=new ModelAndView();
 		mv=new ModelAndView("redirect:./");
- 		//mv.getModelMap().addAttribute("user", user);
+ 		
 	
 	}
 	else{
@@ -82,6 +82,11 @@ public ModelAndView logout(HttpServletRequest request, HttpServletResponse respo
 	if(session!=null)
 		session.invalidate();
 	ModelAndView mv=new ModelAndView("redirect:./");
+	return mv;
+}
+@RequestMapping(value="/failure", method=RequestMethod.GET)
+public ModelAndView failure(HttpServletRequest request, HttpServletResponse response){
+	ModelAndView mv=new ModelAndView("failure");
 	return mv;
 }
 }
