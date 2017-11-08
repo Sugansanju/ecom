@@ -292,7 +292,8 @@ $(document).ready(function(){
 				</div>
 			</div>
 		</div>
-       </div>             </tr>
+       </div> 
+                   </tr>
  
               </thead> 
  <tbody>
@@ -347,7 +348,7 @@ $(document).ready(function(){
 						<h2>Category</h2>
 					</div>
 					<div class="col-sm-6">
-					 <a href="newcategory"  class="btn btn-success" >ADD</a>
+					 <a href="admin/newcategory"  class="btn btn-success" >ADD</a>
 						<!-- <a href="newproduct" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> ADD PRODUCT</a> -->
 												
 					</div>

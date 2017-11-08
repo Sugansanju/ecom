@@ -53,6 +53,7 @@ private SessionFactory sessionFactory;
 			Query query = session.createQuery(hql);
 			List results=null;
 			results = query.list();
+		/*	List results = query.list();*/
 			if(results!=null)
 				return (User) results.get(0);
 			else

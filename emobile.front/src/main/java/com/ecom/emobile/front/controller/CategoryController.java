@@ -21,20 +21,20 @@ public class CategoryController {
 	@Autowired
 	private CategoryDao categoryDao;
 	/*------Category ADD-------*/
-	@RequestMapping(value="/newcategory", method=RequestMethod.GET)
+	@RequestMapping(value="admin/newcategory", method=RequestMethod.GET)
  	public ModelAndView addCategory(){
  		ModelAndView mv=new ModelAndView("add","command",new Category());
 		return mv;
 
 	}	
-	@RequestMapping(value="/newcategory", method=RequestMethod.POST)
+	@RequestMapping(value="admin/newcategory", method=RequestMethod.POST)
 	public ModelAndView viewCategory(@ModelAttribute("category") Category category){
 		ModelAndView mv=new ModelAndView("products");
 		categoryDao.save(category);
 		return mv;
 }
 	/*---------Update Category----------*/
-	@RequestMapping(value="/updatecategory" , method=RequestMethod.GET) 
+	@RequestMapping(value="admin/updatecategory" , method=RequestMethod.GET) 
 	public ModelAndView viewUpdateCategory(Model model,@RequestParam("id") int cid){
  		ModelAndView mv=new ModelAndView("update");
  		Category category=categoryDao.findById(cid);
@@ -42,7 +42,7 @@ public class CategoryController {
   		//mv.getModelMap().addAttribute("supplier", supplierDao.findAll());
   		return mv;
   }	
-	@RequestMapping(value="/updatecategory", method=RequestMethod.POST)
+	@RequestMapping(value="admin/updatecategory", method=RequestMethod.POST)
 	// public ModelAndView updateProduct(@ModelAttribute("product") Product product){
 	public ModelAndView updateProduct(HttpServletRequest request, HttpServletResponse response){
 		ModelAndView mv=new ModelAndView("redirect:supplier");
@@ -54,7 +54,7 @@ public class CategoryController {
 		return mv;
 		
 	 }
-	 @RequestMapping(value="/deletecategory", method=RequestMethod.GET)
+	 @RequestMapping(value="admin/deletecategory", method=RequestMethod.GET)
 		public ModelAndView delete(@RequestParam("id") int id){
 			ModelAndView mv=new ModelAndView("redirect:supplier","command", new Category());
 			categoryDao.delete(id);

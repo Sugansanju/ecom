@@ -10,12 +10,14 @@
 	  <div class="wrapper">
     <form class="form-signin" action="validate" method="POST">       
       <h2 class="form-signin-heading">Please login</h2>
+      <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
       <input type="text" class="form-control" name="txtemail" placeholder="Email Address" required=" " autofocus=" " />
       <input type="password" class="form-control" name="txtpassword" placeholder="Password" required=" " />      
       <label class="checkbox">
         <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
       </label>
       <input type="submit" class="btn btn-lg btn-primary btn-block" name="butsubmit" value= "Login">
+      
       <!-- <a href="index" class="btn btn-lg btn-primary btn-block" type="submit">Login</a>   --> 
     </form>
   </div>

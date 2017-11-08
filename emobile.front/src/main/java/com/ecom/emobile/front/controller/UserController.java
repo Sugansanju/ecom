@@ -1,23 +1,31 @@
 package com.ecom.emobile.front.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ecom.emobile.backend.Dao.ProductDao;
 import com.ecom.emobile.backend.Dao.UserDao;
+import com.ecom.emobile.backend.Model.Product;
 import com.ecom.emobile.backend.Model.User;
 
 @Controller
 public class UserController {
 @Autowired
 private UserDao userDao;
+@Autowired
+private ProductDao productDao;
 /*-----REGISTER--------*/
 @RequestMapping(value="/register" , method=RequestMethod.GET)
 public ModelAndView register() {
@@ -63,6 +71,11 @@ public ModelAndView validate(HttpServletRequest request, HttpServletResponse res
 	}			
 	return mv;
 }
+/*@RequestMapping(value="/admin" , method=RequestMethod.GET)
+public ModelAndView admin() {
+	ModelAndView mv=new ModelAndView ("supplier");
+	return mv;
+}*/
 @RequestMapping(value="/logout", method=RequestMethod.GET)
 public ModelAndView logout(HttpServletRequest request, HttpServletResponse response){
 	HttpSession session=request.getSession(false);

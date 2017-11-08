@@ -15,7 +15,7 @@
 			<div class="row">
 				<div class="col-md-6 col-sm-offset-3">
 
-					<form class="well form-horizontal" action="newproduct"
+					<form class="well form-horizontal" action="/admin/newproduct"
 						method="POST" id="add_form">
 						<!-- enctype="multipart/form-data" -->
 						<fieldset>
@@ -65,7 +65,7 @@
 									</div>
 								</div>
 							</div>
-<div class="form-group">
+                    <div class="form-group">
 								<label class="col-md-4 control-label">Category Name</label>
 								<div class="col-md-4 inputGroupContainer">
 									<div class="input-group"></div>
@@ -134,7 +134,7 @@
 				<div class="row">
 					<div class="col-md-6 col-sm-offset-3">
 
-						<form class="well form-horizontal" action="newcategory "
+						<form class="well form-horizontal" action="/admin/newcategory "
 							method="POST" id="add_form">
 							<!-- enctype="multipart/form-data" -->
 							<fieldset>
@@ -190,6 +190,8 @@
 					</div>
 				</div>
 			</div>
+			</div>
+			</div>
 
 			<div id="site">
 
@@ -197,7 +199,7 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-offset-3">
 
-							<form class="well form-horizontal" action="newsupplier "
+							<form class="well form-horizontal" action="/admin/newsupplier "
 								method="POST" id="add_form">
 								<!-- enctype="multipart/form-data" -->
 								<fieldset>
@@ -277,6 +279,9 @@
 						</div>
 					</div>
 				</div>
+				</div>
+				</div>
+			
 </body>
 </html>
 

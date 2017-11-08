@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -32,9 +31,19 @@ public class ProductController {
 	
 	/*--------SUPPILER PAGE---------*/
 	
-	
-	@RequestMapping(value="/supplier", method=RequestMethod.GET)
+	@RequestMapping(value="supplier", method=RequestMethod.GET)
 	public ModelAndView suppiler() {
+	ModelAndView mv=new ModelAndView("supplier");
+	List<Product> products=productDao.findAll();
+	List<Category> category=categoryDao.findAll();
+	List<Supplier> supplier=supplierDao.findAll();
+	mv.getModelMap().addAttribute("products", products);
+	mv.getModelMap().addAttribute("category", category);
+	mv.getModelMap().addAttribute("supplier",supplier);	
+	return mv;
+	}
+	@RequestMapping(value="admin/supplier", method=RequestMethod.GET)
+	public ModelAndView suppilers() {
 	ModelAndView mv=new ModelAndView("supplier");
 	List<Product> products=productDao.findAll();
 	List<Category> category=categoryDao.findAll();
@@ -73,7 +82,7 @@ public class ProductController {
 		return mv;
 	}
 	/*------Product ADD-------*/
-	@RequestMapping(value="/newproduct" , method=RequestMethod.GET)
+	@RequestMapping(value="admin/newproduct" , method=RequestMethod.GET)
 	public ModelAndView addproduct(HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mv=new ModelAndView("add");
 		request.setAttribute("categories", categoryDao.findAll());
@@ -90,7 +99,7 @@ public class ProductController {
 		mv.getModelMap().addAttribute("products", products);
 		return mv;
 	}*/
-	@RequestMapping(value="/newproduct", method=RequestMethod.POST)
+	@RequestMapping(value="admin/newproduct", method=RequestMethod.POST)
 	 	 public ModelAndView newProduct(HttpServletRequest request, HttpServletResponse response){
 	 	Category category=categoryDao.findById(Integer.parseInt(request.getParameter("cid")));
 		Supplier supplier=supplierDao.findById(Integer.parseInt(request.getParameter("sid")));
@@ -107,7 +116,7 @@ public class ProductController {
 	 		return mv;
 	 	 }
 	/*----------UPDATE PAGE-------------*/
-	@RequestMapping(value="/updateproduct" , method=RequestMethod.GET) 
+	@RequestMapping(value="admin/updateproduct" , method=RequestMethod.GET) 
 			public ModelAndView viewUpdate(Model model,@RequestParam("id") int pid){
 		 		ModelAndView mv=new ModelAndView("update");
 		 		Product product=productDao.findById(pid);
@@ -116,7 +125,7 @@ public class ProductController {
 		  		mv.getModelMap().addAttribute("supplier", supplierDao.findAll());
 		  		return mv;
 		  }	
-	@RequestMapping(value="/updateproduct", method=RequestMethod.POST)
+	@RequestMapping(value="admin/updateproduct", method=RequestMethod.POST)
 	// public ModelAndView updateProduct(@ModelAttribute("product") Product product){
 	public ModelAndView updateProduct(HttpServletRequest request, HttpServletResponse response){
 		ModelAndView mv=new ModelAndView("redirect:supplier");
@@ -141,7 +150,7 @@ public class ProductController {
 	
 	
 	/*-------DELETE PAGE-----------*/
-    @RequestMapping(value="/deleteproduct", method=RequestMethod.GET)
+    @RequestMapping(value="admin/deleteproduct", method=RequestMethod.GET)
     			public ModelAndView delete(@RequestParam("id") int id){
     				ModelAndView mv=new ModelAndView("supplier","command", new Product());
     				productDao.delete(id);

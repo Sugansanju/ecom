@@ -9,7 +9,8 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-        <!--   <a class="navbar-brand" href="#"></a> -->
+         <!--  <a  href="#"> <img src="./resource/images/logo.png" class="img-rounded" width="40" height="30"> </a>
+ -->    </div>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -33,16 +34,9 @@
 							
 							
 							<a href="supplier"><span class="glyphicon glyphicon-user"></span>ADMIN ACTIVITY</a></li>
-			<!-- <li class="dropdown">
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="glyphicon glyphicon-plus"></span>ADMIN ACTIVITY<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="newproduct"><span class="glyphicon glyphicon-plus"></span>Product</a></li>
-                        <li><a href="newcategory"><span class="glyphicon glyphicon-plus"></span>Category</a></li>
-                        <li><a href="newsupplier"><span class="glyphicon glyphicon-plus"></span>Add Supplier</a></li>
+			
                         </ul>
-                        </li> -->
-                        </ul>
-                         </c:if>
+                        </c:if>
                          <ul class="nav navbar-nav navbar-right">
                           <c:if test="${sessionScope['email'] != 'sanju12@gmail.com'}">
                           <li><a href="products"><i class="fa fa-product-hunt"></i>Products</a></li>
@@ -53,4 +47,12 @@
      </div>
      </div>
      </nav>
+     <!-- <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="glyphicon glyphicon-plus"></span>ADMIN ACTIVITY<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="newproduct"><span class="glyphicon glyphicon-plus"></span>Product</a></li>
+                        <li><a href="newcategory"><span class="glyphicon glyphicon-plus"></span>Category</a></li>
+                        <li><a href="newsupplier"><span class="glyphicon glyphicon-plus"></span>Add Supplier</a></li>
+                        </ul>
+                        </li> -->
     
