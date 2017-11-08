@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 
+import com.ecom.emobile.backend.Model.Cart;
 import com.ecom.emobile.backend.Model.Category;
 import com.ecom.emobile.backend.Model.Product;
 import com.ecom.emobile.backend.Model.Supplier;
@@ -49,6 +50,7 @@ public class HibernateConfig {
 		builder.addAnnotatedClass(Product.class);
 		builder.addAnnotatedClass(Category.class);
 		builder.addAnnotatedClass(Supplier.class);
+		builder.addAnnotatedClass(Cart.class);
 		return builder.buildSessionFactory();
 	}
 }
