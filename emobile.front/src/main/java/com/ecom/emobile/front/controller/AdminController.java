@@ -42,6 +42,7 @@ public class AdminController {
 	mv.getModelMap().addAttribute("supplier",supplier);	
 	return mv;
 	}
+	
 	@RequestMapping(value="/newproduct" , method=RequestMethod.GET)
 	public ModelAndView addproduct(HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mv=new ModelAndView("add");
@@ -72,7 +73,7 @@ public class AdminController {
 	 		product.setCategory(category);
 	 		product.setSid(supplier);
 	 		productDao.save(product);
-	 		ModelAndView mv=new ModelAndView("products");
+	 		ModelAndView mv=new ModelAndView("redirect:./products");
 	 		return mv;
 	 	 }
 	/*----------UPDATE PAGE-------------*/
@@ -117,20 +118,20 @@ public class AdminController {
     				mv.getModelMap().addAttribute("products", productDao.findAll());
     				return mv;
     			}	
-	@RequestMapping(value="newcategory", method=RequestMethod.GET)
+	@RequestMapping(value="/newcategory", method=RequestMethod.GET)
  	public ModelAndView addCategory(){
  		ModelAndView mv=new ModelAndView("add","command",new Category());
 		return mv;
 
 	}	
-	@RequestMapping(value="newcategory", method=RequestMethod.POST)
+	@RequestMapping(value="/newcategory", method=RequestMethod.POST)
 	public ModelAndView viewCategory(@ModelAttribute("category") Category category){
 		ModelAndView mv=new ModelAndView("products");
 		categoryDao.save(category);
 		return mv;
 }
 	/*---------Update Category----------*/
-	@RequestMapping(value="updatecategory" , method=RequestMethod.GET) 
+	@RequestMapping(value="/updatecategory" , method=RequestMethod.GET) 
 	public ModelAndView viewUpdateCategory(Model model,@RequestParam("id") int cid){
  		ModelAndView mv=new ModelAndView("update");
  		Category category=categoryDao.findById(cid);
@@ -138,7 +139,7 @@ public class AdminController {
   		//mv.getModelMap().addAttribute("supplier", supplierDao.findAll());
   		return mv;
   }	
-	@RequestMapping(value="updatecategory", method=RequestMethod.POST)
+	@RequestMapping(value="/updatecategory", method=RequestMethod.POST)
 	// public ModelAndView updateProduct(@ModelAttribute("product") Product product){
 	public ModelAndView updatecategory(HttpServletRequest request, HttpServletResponse response){
 		ModelAndView mv=new ModelAndView("redirect:supplier");
@@ -150,20 +151,20 @@ public class AdminController {
 		return mv;
 		
 	 }
-	 @RequestMapping(value="deletecategory", method=RequestMethod.GET)
+	 @RequestMapping(value="/deletecategory", method=RequestMethod.GET)
 		public ModelAndView deletecat(@RequestParam("id") int id){
 			ModelAndView mv=new ModelAndView("redirect:supplier","command", new Category());
 			categoryDao.delete(id);
 			mv.getModelMap().addAttribute("supplier", categoryDao.findAll());
 			return mv;
 		}	
-		@RequestMapping(value="newsupplier", method=RequestMethod.GET)
+		@RequestMapping(value="/newsupplier", method=RequestMethod.GET)
 	 	public ModelAndView addSupplier(){
 	 		ModelAndView mv=new ModelAndView("add","command",new Supplier());
 			return mv;
 
 		}	
-	    @RequestMapping(value="newsupplier", method=RequestMethod.POST)
+	    @RequestMapping(value="/newsupplier", method=RequestMethod.POST)
 	 	 public ModelAndView newsupplier (HttpServletRequest request, HttpServletResponse response){
 		     Supplier supplier=new Supplier();
 		     supplier.setSname(request.getParameter("sname"));
@@ -175,14 +176,14 @@ public class AdminController {
 		    return mv;
 	 	 }
 	    /*-----------Update Supplier---------*/
-	    @RequestMapping(value="updatesupplier" , method=RequestMethod.GET) 
+	    @RequestMapping(value="/updatesupplier" , method=RequestMethod.GET) 
 		public ModelAndView viewSupplier(Model model,@RequestParam("id") int sid){
 	 		ModelAndView mv=new ModelAndView("update");
 	 		Supplier supplier=supplierDao.findById(sid);
 	  		mv.getModelMap().addAttribute("sup", supplier);
 	  		return mv;
 	  }	
-	    @RequestMapping(value="updatesupplier", method=RequestMethod.POST)
+	    @RequestMapping(value="/updatesupplier", method=RequestMethod.POST)
 		// public ModelAndView updateProduct(@ModelAttribute("product") Product product){
 		public ModelAndView updateSupplier(HttpServletRequest request, HttpServletResponse response){
 			ModelAndView mv=new ModelAndView("redirect:supplier");
@@ -197,7 +198,7 @@ public class AdminController {
 			return mv;
 			
 		 }
-	    @RequestMapping(value="deletesupplier", method=RequestMethod.GET)
+	    @RequestMapping(value="/deletesupplier", method=RequestMethod.GET)
 		public ModelAndView deletesup(@RequestParam("id") int id){
 			ModelAndView mv=new ModelAndView("supplier","command", new Supplier());
 			supplierDao.delete(id);

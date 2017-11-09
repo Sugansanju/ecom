@@ -15,21 +15,22 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
           
-          ${sessionScope['email']}
+          <b>${sessionScope['user'].name}</b>
       <c:choose>
-      <c:when test="${sessionScope['email'] eq null}">
+      <c:when test="${sessionScope['user'] eq null}">
        <li><a href="register"><span class="glyphicon glyphicon-user"></span>Register</a></li>
       <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       
       </c:when>
-      <c:when test="${sessionScope['email'] ne null}">
+      <c:when test="${sessionScope['user'] ne null}">
       <li><a href="logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
       </c:when>
+      
       </c:choose>
           </ul>
           
-         
-          <c:if test="${sessionScope['email'] == 'sanju12@gmail.com'}">
+         <c:if test="${sessionScope['user'] ne null}">
+          <c:if test="${sessionScope['user'].role eq 'ROLE_ADMIN'}">
 							<ul class="nav navbar-nav navbar-Left">
 							
 							
@@ -37,8 +38,9 @@
 			
                         </ul>
                         </c:if>
+                        </c:if>
                          <ul class="nav navbar-nav navbar-right">
-                          <c:if test="${sessionScope['email'] != 'sanju12@gmail.com'}">
+                          <c:if test="${sessionScope['user'].role ne 'ROLE_ADMIN'}">
                           <li><a href="products"><i class="fa fa-product-hunt"></i>Products</a></li>
 							<li><a href="cart"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
                        

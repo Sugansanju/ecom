@@ -41,6 +41,7 @@ public ModelAndView login(HttpServletRequest request, HttpServletResponse respon
 	user.setContact(request.getParameter("contact"));
 	user.setAddress(request.getParameter("address"));
 	user.setRole("ROLE_USER");
+	user.setEnabled(true);
 	ModelAndView mv=new ModelAndView("login");
 	userDao.save(user);
 	return mv;

@@ -259,7 +259,7 @@ $(document).ready(function(){
 						<h2>Products</h2>
 					</div>
 					<div class="col-sm-6">
-					 <a href="newproduct"  class="btn btn-success" >ADD</a>
+					 <a href="admin/newproduct"  class="btn btn-success" >ADD</a>
 						<!-- <a href="newproduct" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> ADD PRODUCT</a> -->
 												
 					</div>
@@ -330,8 +330,8 @@ $(document).ready(function(){
 				<div class="col-md-2">
 				<br>
 					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-					<a href="updateproduct?id=${p.pid}"><span class="glyphicon glyphicon-edit"></span></a>
-					<a href="deleteproduct?id=${p.pid}"><span class="glyphicon glyphicon-trash"></span></a>
+					<a href="admin/updateproduct?id=${p.pid}"><span class="glyphicon glyphicon-edit"></span></a>
+					<a href="admin/deleteproduct?id=${p.pid}"><span class="glyphicon glyphicon-trash"></span></a>
 				</div>
 				</div>
 		</div>
@@ -391,8 +391,8 @@ $(document).ready(function(){
 				<div class="col-md-3">
 				<br>
 				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-					<a href="updatecategory?id=${cat.cid}"><span class="glyphicon glyphicon-edit"></span></a>
-					<a href="deletecategory?id=${cat.cid}"><span class="glyphicon glyphicon-trash"></span></a>
+					<a href="admin/updatecategory?id=${cat.cid}"><span class="glyphicon glyphicon-edit"></span></a>
+					<a href="admin/deletecategory?id=${cat.cid}"><span class="glyphicon glyphicon-trash"></span></a>
 				</div>
 				</div>
 		</div>
@@ -409,7 +409,7 @@ $(document).ready(function(){
 						<h2>Supplier</h2>
 					</div>
 					<div class="col-sm-6">
-					 <a href="newsupplier"  class="btn btn-success" >ADD</a>
+					 <a href="admin/newsupplier"  class="btn btn-success" >ADD</a>
 						<!-- <a href="newproduct" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> ADD PRODUCT</a> -->
 												
 					</div>
@@ -479,8 +479,8 @@ $(document).ready(function(){
 				<div class="col-md-2">
 				<br>
 					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-					<a href="updatesupplier?id=${s.sid}"><span class="glyphicon glyphicon-edit"></span></a>
-					<a href="deletesupplier?id=${s.sid}"><span class="glyphicon glyphicon-trash"></span></a>
+					<a href="admin/updatesupplier?id=${s.sid}"><span class="glyphicon glyphicon-edit"></span></a>
+					<a href="admin/deletesupplier?id=${s.sid}"><span class="glyphicon glyphicon-trash"></span></a>
 				</div>
 				</div>
 		</div>

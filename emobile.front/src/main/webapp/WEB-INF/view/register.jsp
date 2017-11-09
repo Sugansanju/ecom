@@ -19,7 +19,7 @@
 
   
 <!-- Text input-->
-
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 <div class="form-group">
   <label class="col-md-4 control-label">Username</label>  
   <div class="col-md-4 inputGroupContainer">

@@ -15,8 +15,9 @@
 			<div class="row">
 				<div class="col-md-6 col-sm-offset-3">
 
-					<form class="well form-horizontal" action="/admin/newproduct"
+					<form class="well form-horizontal" action="newproduct"
 						method="POST" id="add_form">
+						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 						<!-- enctype="multipart/form-data" -->
 						<fieldset>
 							<!-- Form Name -->
@@ -134,14 +135,13 @@
 				<div class="row">
 					<div class="col-md-6 col-sm-offset-3">
 
-						<form class="well form-horizontal" action="/admin/newcategory "
+						<form class="well form-horizontal" action="admin/newcategory "
 							method="POST" id="add_form">
 							<!-- enctype="multipart/form-data" -->
 							<fieldset>
 
 								<!-- Form Name -->
-								<form class="well form-horizontal" action="newcategory"
-									method="POST" id="add_form">
+								<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 									<legend>
 										<center>
 											<h2>
@@ -199,14 +199,13 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-offset-3">
 
-							<form class="well form-horizontal" action="/admin/newsupplier "
+							<form class="well form-horizontal" action="admin/newsupplier "
 								method="POST" id="add_form">
 								<!-- enctype="multipart/form-data" -->
 								<fieldset>
 
-									<!-- Form Name -->
-									<form class="well form-horizontal" action="newsupplier"
-										method="POST" id="add_form">
+									
+										<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 										<legend>
 											<center>
 												<h2>
@@ -221,6 +220,7 @@
 											<label class="col-md-4 control-label">Name</label>
 											<div class="col-md-4 inputGroupContainer">
 												<div class="input-group">
+												
 													<!--  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> -->
 													<input name="sname" placeholder="Name" class="form-control"
 														type="text">
