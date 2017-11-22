@@ -27,7 +27,9 @@
 									</legend>
 									<br>
 							<!-- Text input-->
+							
 							<form class="well form-horizontal" action="updateproduct" method="POST" id="update">
+							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                               
                                <input type="hidden" name="pid" value="${product.pid}" >
 							
@@ -158,7 +160,7 @@
 											</h2>
 										</center>
 									</legend>
-									<br>
+									<br><input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 <input type="hidden" name="cid" value="${category.cid}" >
 									<div class="form-group">
 										<label class="col-md-4 control-label">Category Name</label>
@@ -205,6 +207,7 @@
 									<br>
 							<!-- Text input-->
 							<form class="well form-horizontal" action="updatesupplier" method="POST" id="update">
+							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                               
                                <input type="hidden" name="sid" value="${sup.sid}" >
 							

@@ -15,25 +15,19 @@
 			  <thead>
 				<tr>
 					<th scope="col">Item</th>
-					<th scope="col">Qty</th>
+					<th scope="col">Quantity</th>
 					<th scope="col">Price</th>
 				</tr>
 			  </thead>
-			  <tbody>
-			  
-			  </tbody>
 			</table>
 		 <div id="pricing">
-			
 			<p id="shipping">
 				<strong>Shipping</strong>: <span id="sshipping"></span>
 			</p>
-			
 			<p id="sub-total">
 				<strong>Total</strong>: <span id="stotal"></span>
 			</p>
 		 </div>
-		 
 		 <div id="user-details">
 		 	<h2>Your Data</h2>
 		 	<div id="user-details-content"></div>

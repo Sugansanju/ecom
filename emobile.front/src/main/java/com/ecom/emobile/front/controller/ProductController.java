@@ -43,7 +43,30 @@ public class ProductController {
 	return mv;
 	}*/
 	/*------PRODUCT PAGE---------*/
-	
+	/*@RequestMapping(value="/newproduct" , method=RequestMethod.GET)
+	public ModelAndView addproduct(HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView mv=new ModelAndView("add");
+		request.setAttribute("categories", categoryDao.findAll());
+		request.setAttribute("supplier",supplierDao.findAll());
+		return mv;
+	}
+	@RequestMapping(value="/newproduct", method=RequestMethod.POST)
+	 public ModelAndView newProduct(HttpServletRequest request, HttpServletResponse response){
+	Category category=categoryDao.findById(Integer.parseInt(request.getParameter("cid")));
+	Supplier supplier=supplierDao.findById(Integer.parseInt(request.getParameter("sid")));
+		Product product =new Product();
+		product.setPname(request.getParameter("pname"));
+		product.setPquantity(Integer.parseInt(request.getParameter("pquantity")));
+		product.setPdescrip(request.getParameter("pdescrip"));
+		product.setPprice(Float.parseFloat(request.getParameter("pprice"))) ;
+		product.setPimage(request.getParameter("pimage"));
+		product.setCategory(category);
+		product.setSid(supplier);
+		productDao.save(product);
+		ModelAndView mv=new ModelAndView("redirect:products");
+		return mv;
+	 }
+	*/
 	
 	@RequestMapping(value="/products" , method=RequestMethod.GET)
 	public ModelAndView products() {

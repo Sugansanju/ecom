@@ -51,8 +51,6 @@ public class HibernateConfig {
 		builder.addAnnotatedClass(Product.class);
 		builder.addAnnotatedClass(Category.class);
 		builder.addAnnotatedClass(Supplier.class);
-		builder.addAnnotatedClass(Cart.class);
-		builder.addAnnotatedClass(CartItem.class);
 		return builder.buildSessionFactory();
 	}
 }

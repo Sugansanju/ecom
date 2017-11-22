@@ -259,7 +259,7 @@ $(document).ready(function(){
 						<h2>Products</h2>
 					</div>
 					<div class="col-sm-6">
-					 <a href="admin/newproduct"  class="btn btn-success" >ADD</a>
+					 <a href='<c:url value='/admin/newproduct'></c:url>' class="btn btn-success" >ADD</a>
 						<!-- <a href="newproduct" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> ADD PRODUCT</a> -->
 												
 					</div>
@@ -330,8 +330,8 @@ $(document).ready(function(){
 				<div class="col-md-2">
 				<br>
 					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-					<a href="admin/updateproduct?id=${p.pid}"><span class="glyphicon glyphicon-edit"></span></a>
-					<a href="admin/deleteproduct?id=${p.pid}"><span class="glyphicon glyphicon-trash"></span></a>
+					<a href="updateproduct?id=${p.pid}"><span class="glyphicon glyphicon-edit"></span></a>
+					<a href="deleteproduct?id=${p.pid}"><span class="glyphicon glyphicon-trash"></span></a>
 				</div>
 				</div>
 		</div>
@@ -348,7 +348,7 @@ $(document).ready(function(){
 						<h2>Category</h2>
 					</div>
 					<div class="col-sm-6">
-					 <a href="admin/newcategory"  class="btn btn-success" >ADD</a>
+					 <a href='<c:url value='/admin/newcategory'></c:url>'   class="btn btn-success" >ADD</a>
 						<!-- <a href="newproduct" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> ADD PRODUCT</a> -->
 												
 					</div>
@@ -409,7 +409,7 @@ $(document).ready(function(){
 						<h2>Supplier</h2>
 					</div>
 					<div class="col-sm-6">
-					 <a href="admin/newsupplier"  class="btn btn-success" >ADD</a>
+					 <a href='<c:url value='/admin/newsupplier'></c:url>'   class="btn btn-success" >ADD</a>
 						<!-- <a href="newproduct" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> ADD PRODUCT</a> -->
 												
 					</div>

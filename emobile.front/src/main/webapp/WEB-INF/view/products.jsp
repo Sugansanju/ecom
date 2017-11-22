@@ -22,22 +22,22 @@
 							data-price="20.00">
 							<h3 class="product-name">${p.pname}</h3>
 							<p class="product-price">${p.pprice}</p>
-							<form class="add-to-cart" action="cart" method="post">
-								<div>
-									<label for="qty-1">Quantity</label> <input type="text"
-										name="qty-1" id="qty-1" class="qty" value="1" />
+							<!-- class="add-to-cart" --> <form action="cart" method="POST">
+								<!-- <div>
+									<label for="qty-1">Quantity</label> <input type="text" name="txtQuantity" value="" />
 								</div>
 								<p>
-									<input type="submit" value="Add to cart" class="btn" />
-									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="product?id=${p.pid}"
+									<p><button type="submit" class="btn btn-warning ">Add to cart<span class="glyphicon glyphicon-shopping-cart"></span>
+						</button></p> -->
+									<div align="center">
+									<a href="product?id=${p.pid}"
 										role="button" class="btn btn-warning">Details</a>
-								</p>
+										</div>
 							</form>
 						</div>
 					</li>					
 				</c:forEach>
-					
-				</ul>
+			</ul>
 			</div>
 		</div>
 </body>

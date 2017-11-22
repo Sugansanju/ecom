@@ -13,9 +13,10 @@
  -->    </div>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-left">
+            ${sessionScope['user'].name}
+          </ul>
           <ul class="nav navbar-nav navbar-right">
-          
-          <b>${sessionScope['user'].name}</b>
       <c:choose>
       <c:when test="${sessionScope['user'] eq null}">
        <li><a href="register"><span class="glyphicon glyphicon-user"></span>Register</a></li>
@@ -32,10 +33,8 @@
          <c:if test="${sessionScope['user'] ne null}">
           <c:if test="${sessionScope['user'].role eq 'ROLE_ADMIN'}">
 							<ul class="nav navbar-nav navbar-Left">
+							<a href='<c:url value='/admin/supplier'></c:url>'><span class="glyphicon glyphicon-user"></span>ADMIN ACTIVITY</a>
 							
-							
-							<a href="admin/supplier"><span class="glyphicon glyphicon-user"></span>ADMIN ACTIVITY</a></li>
-			
                         </ul>
                         </c:if>
                         </c:if>

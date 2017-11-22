@@ -58,7 +58,6 @@ private SessionFactory sessionFactory;
 				return (User) results.get(0);
 			else
 				return null;		
-			
 		}
 
 	public boolean validate(String email, String password) {
@@ -68,10 +67,8 @@ private SessionFactory sessionFactory;
 		List results = query.list();
 		if(results!=null)
 			return true;
-		
 		else
-			return false;		
-		
+			return false;				
 	}
 	
 }

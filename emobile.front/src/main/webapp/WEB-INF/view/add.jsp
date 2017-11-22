@@ -135,7 +135,7 @@
 				<div class="row">
 					<div class="col-md-6 col-sm-offset-3">
 
-						<form class="well form-horizontal" action="admin/newcategory "
+						<form class="well form-horizontal" action="newcategory "
 							method="POST" id="add_form">
 							<!-- enctype="multipart/form-data" -->
 							<fieldset>
@@ -199,7 +199,7 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-offset-3">
 
-							<form class="well form-horizontal" action="admin/newsupplier "
+							<form class="well form-horizontal" action="newsupplier "
 								method="POST" id="add_form">
 								<!-- enctype="multipart/form-data" -->
 								<fieldset>
@@ -280,7 +280,7 @@
 					</div>
 				</div>
 				</div>
-				</div>
+				
 			
 </body>
 </html>
